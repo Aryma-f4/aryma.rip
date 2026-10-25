@@ -22,3 +22,7 @@ Edit target: Image 1, the simple flat-color Supreme Calamitas transparent cutout
 
 Final assets live in public/assets/night.png, public/assets/calamitas.png, and public/assets/calamitas-singing.png. Character alpha is preserved.
 
+
+## Trace of Me
+
+The second route shares the simple anime illustration language of Calamitas. Separate generated layers: `public/assets/trace-city.png` (burning ruins), `trace-exo.png` (transparent Exo Mech), and `trace-avatar.png` (transparent injured avatar bust). References supplied by the user: burning-city composition, navy-haired avatar with glasses, and Exo Mech art. Injuries remain non-graphic. Layered CSS animates the reactor, cannon, body and firelight; reduced-motion disables animation.

@@ -63,3 +63,11 @@ Tools use `li.tool-entry` with a title and short description. Certifications use
 ## Rollback
 
 The last buildless version is Git commit `b6d0989`. It retains the original HTML/JS assets in history. Revert the migration commit to restore that version; no portfolio content or artwork needs to be recreated.
+
+## Trace of Me
+
+The home footer opens `/trace-of-me/`. The original home poems remain on `/`; projects, certifications and published disclosures live on the new route. Edit `app/trace-of-me/page.jsx` for the introduction, tools and certifications, and `lib/advisories.mjs` for CVEs and advisory links.
+
+The trace page uses the supplied “Catastrophes before the calamity — Interlude 03” MP3 and separate simple anime layers in `public/assets/trace-city.png`, `trace-avatar.png` and `trace-exo.png`. Home uses a locally synthesized, filtered rain ambience (`public/assets/rain.mp3`), with an independent rain toggle. Pausing the home music pauses rain too. Each route owns and cleans up its own audio. Both attempt audible autoplay; browser policy can require a first interaction.
+
+Singing follows interpolated samples from the isolated vocal envelope, with elapsed-time attack/release smoothing, changing lip width and a subtle seated lean. Reduced-motion preferences disable these movements.
