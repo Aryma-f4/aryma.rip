@@ -34,7 +34,7 @@ A third generated pose lowers her hands and keeps the tears visible after a voca
 
 ## Tools and certifications
 
-The two personal archive sections live in `dist/index.html`, between the letter and the closing poem. They intentionally contain no invented tools or qualifications.
+The two personal archive sections live in `dist/index.html`, between the letter and the closing poem. Current entries are Gulpsuite and WorldShellFinder, with CPENT (EC-Council), CWSE (Hackviser), and CAPT (Hackviser). Personal names are omitted. Dates and credential links are not displayed because they have not been supplied.
 
 ### What I'm working with
 
