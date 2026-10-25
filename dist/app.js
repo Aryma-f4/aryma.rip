@@ -1,4 +1,4 @@
-import { mouthAmount, particleCount, cueAt } from './motion.mjs';
+import { mouthAmount, particleCount, cueAt, characterPose } from './motion.mjs';
 import { lyrics, vocalPassages, vocalEnvelope, envelopeStep } from './lyrics.mjs';
 
 const audio = document.querySelector('#soundtrack');
@@ -11,6 +11,7 @@ const character = document.querySelector('.character');
 const subtitle = document.querySelector('#subtitle');
 const seek = document.querySelector('#seek');
 let activeCue = null;
+let completedPerformance = false;
 const canvas = document.querySelector('#weather');
 const ctx = canvas.getContext('2d');
 const hero = document.querySelector('.hero');
@@ -63,7 +64,11 @@ function syncLyrics() {
   activeCue = cueAt(audio.currentTime, lyrics);
   const text = activeCue?.text ?? '';
   if (subtitle.textContent !== text) subtitle.textContent = text;
-  character.classList.toggle('is-singing', Boolean(cueAt(audio.currentTime, vocalPassages) && !audio.paused));
+  if (audio.currentTime >= vocalPassages.at(-1).end) completedPerformance = true;
+  const pose = characterPose(audio.currentTime, !audio.paused, vocalPassages, completedPerformance);
+  character.dataset.pose = pose;
+  character.classList.toggle('is-singing', pose === 'singing');
+  character.classList.toggle('is-aftermath', pose === 'aftermath');
   if (!cueAt(audio.currentTime, vocalPassages) || audio.paused) closeMouth();
   if (Number.isFinite(audio.duration)) {
     seek.disabled = false;
@@ -83,7 +88,11 @@ function enableSeeking() {
 }
 audio.addEventListener('loadedmetadata', enableSeeking);
 enableSeeking();
-seek.addEventListener('input', () => { audio.currentTime=Number(seek.value); syncLyrics(); });
+seek.addEventListener('input', () => {
+  if (Number(seek.value) < vocalPassages[0].start) completedPerformance = false;
+  audio.currentTime=Number(seek.value);
+  syncLyrics();
+});
 volume.addEventListener('input', () => {
   audio.volume = Number(volume.value);
   if (audio.volume === 0) closeMouth();

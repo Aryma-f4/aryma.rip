@@ -27,3 +27,7 @@ Music: Sky After Rain by PinpinNeon, vocals SOLARIA. The local recording was sup
 Autoplay with sound is attempted on load. Browsers may require the play button or “Stay a while. Listen.” gesture. The vocals drive a stylized mouth animation, not phoneme-accurate lip sync. Reduced-motion settings disable continuous motion while retaining subtitles and pose states.
 
 `aryma.rip` is the intended custom domain. A title/wordmark alone does not connect DNS. Domain activation must be verified separately.
+
+## After the song
+
+A third generated pose lowers her hands and keeps the tears visible after a vocal passage. The aftermath lingers through the final instrumental and the next automatic loop, while a new vocal passage returns to the singing pose. Explicit seeking back before the first vocal passage resets the character to her original resting state. Reduced-motion settings retain these state changes without the crossfade or continuous motion.

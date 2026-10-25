@@ -1,5 +1,11 @@
 # Artwork provenance
 
+## Aftermath pose final prompt
+
+Edit target: supplied transparent Supreme Calamitas flat anime illustration. Create an AFTER-SINGING alternate pose for this same character, same exact SIMPLE clean dark outlines, flat cel colors and minimal shading. Keep the 1050 by 1498 portrait canvas, full seated silhouette scale and lower body/boot locations, same hood, white hair, horns, burgundy cloak and gold trim, cream cravat, and wind-blown cloak tail. Change upper-body pose gently: both hands lowered and loosely folded on her knees, shoulders slightly slumped, head slightly bowed and turned toward the left, sorrowful weary crimson eyes lowered, small closed mouth. She has just finished a sad song and is quietly crying, not dramatic sobbing. Delicate translucent tears on both cheeks with silver-white watery highlights and tiny warm gold reflections, like water catching firelight, NOT face markings and NOT large flames. Match face design and existing style closely. No new costume detail, no painterly rendering, no photorealism. Preserve a genuine transparent RGBA background, alpha zero outside her silhouette, no backdrop, no scenery, no shadows behind character, no text. Make the pose feel quiet, tender and natural for a lingering instrumental outro.
+
+Generated with built-in image_gen; final transparent asset: `dist/assets/calamitas-aftermath.png`.
+
 Generated with the built-in image_gen tool. The first ornate versions were superseded by the user's request for simpler flat anime art.
 
 ## Background final prompt
