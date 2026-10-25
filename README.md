@@ -73,3 +73,11 @@ The trace page uses the supplied “Catastrophes before the calamity — Interlu
 Singing follows interpolated samples from the isolated vocal envelope, with elapsed-time attack/release smoothing, changing lip width and a subtle seated lean. Reduced-motion preferences disable these movements.
 
 Both characters blink with pose-specific vector eyelids. `components/BlinkEyes.jsx` maps lids to the four artwork variants; `BlinkController.jsx` schedules 225 ms blinks with varying 3.8–8.2 second rests. Blinking stops outside the viewport, in hidden tabs, and for reduced-motion preferences; timers and animation frames are removed on unmount.
+
+## Anime.js and story fragments
+
+Anime.js 4.5.0 drives the smoke-like word entrances, one-time prose reveals and the amber story thread. `AshWords.jsx` renders semantic text on the server; `TextAtmosphere.jsx` connects Anime.js to the viewport observer in `lib/text-motion.mjs`. Text stays readable without JavaScript. Switching to reduced motion reverts active styles immediately; leaving the route disconnects observers and reverts all instances.
+
+The original three-part fan narrative in Trace of Me connects the city's promise, the Exo Mech fire, and Calamitas singing in the rain. The real portfolio archive follows it. Edit that story in `app/trace-of-me/page.jsx`.
+
+Implementation references: [Anime.js animation](https://animejs.com/documentation/animation/), [revert cleanup](https://animejs.com/documentation/animation/animation-methods/revert/).

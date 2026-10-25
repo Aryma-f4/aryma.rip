@@ -1,3 +1,5 @@
+import AshWords from "../../components/AshWords";
+import TextAtmosphere from "../../components/TextAtmosphere";
 import BlinkEyes from "../../components/BlinkEyes";
 import BlinkController from "../../components/BlinkController";
 import TraceController from '../../components/TraceController';
@@ -11,6 +13,7 @@ export const metadata = {
 export default function TraceOfMe() {
   return <div className="trace-page">
     <TraceController />
+    <TextAtmosphere />
     <BlinkController selector=".trace-avatar-figure" />
     <a className="skip" href="#about">Skip to the archive</a>
     <main>
@@ -31,21 +34,51 @@ export default function TraceOfMe() {
         <a href="/" className="return-rain">← Back to the rain</a>
         <div className="trace-hero-copy">
           <p className="eyebrow">THE WORLD MOVED ON. SOME PART OF ME DIDN'T.</p>
-          <h1 id="trace-title">I came back.<br /><em>Not all of me did.</em></h1>
+          <h1 id="trace-title" data-ash-title><AshWords text="I came back." /><br /><em><AshWords text="Not all of me did." /></em></h1>
           <p>Some nights, surviving feels like<br />carrying a home that no longer exists.</p>
           <a className="trace-enter" href="#about">Follow what remains <span>↓</span></a>
         </div>
         <span className="trace-scene-label">02 / THE REMAINS</span>
       </section>
+      <section className="lore" aria-labelledby="lore-title">
+        <div className="section-mark"><span>00</span><span className="rule"></span><span>A MEMORY FROM ANOTHER WORLD</span></div>
+        <div className="lore-intro">
+          <p className="lore-preface" data-ash-block>When I cannot explain this world, I remember another.</p>
+          <h2 id="lore-title" data-ash-title><AshWords text="The machines kept the city." /><br /><em><AshWords text="They did not keep us." /></em></h2>
+        </div>
+        <div className="lore-fragments">
+          <span className="lore-thread" data-ash-thread aria-hidden="true"></span>
+          <article className="lore-fragment" data-ash-block>
+            <span className="lore-index">I / THE PROMISE</span>
+            <h3>We asked to be spared the difficult things.</h3>
+            <p>First the work. Then the waiting. Then the uncertainty. Above the roofs, the Exo Mechs kept their perfect watch, and we learned to sleep beneath the sound of something that never needed to rest.</p>
+            <p>I left a half-finished program open that evening. I remember being annoyed with myself for not understanding it yet. Such a small, ordinary sadness. I would give a great deal to have it back.</p>
+          </article>
+          <article className="lore-fragment" data-ash-block>
+            <span className="lore-index">II / THE FIRE</span>
+            <h3>The engines did not sound different.</h3>
+            <p>That is what I remember most. When the weapons turned toward the streets, there was no anger in them. No hesitation either. A window became light. A room became weather. Somewhere, the screen with my unfinished work went dark.</p>
+            <p>I came out with ash in my collar and a name I could still answer to. For a long time, I mistook that for having brought myself home.</p>
+          </article>
+          <article className="lore-fragment" data-ash-block>
+            <span className="lore-index">III / THE RAIN</span>
+            <h3>Beyond the reactors, someone was singing.</h3>
+            <p>Calamitas sat where the last warm ground met the rain. The hands that had called down brimstone were empty. In the water on her face, the fire had become something too small to hurt anyone.</p>
+            <p>I never asked who the song was for. Some nights, a voice is all that stands between a memory and its disappearance. I stayed until the words were gone. The rain kept their place.</p>
+            <a className="lore-return" href="/">Somewhere, she is still singing <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+        <p className="lore-coda" data-ash-block>What follows belongs to this world.<br />The habit of looking for fractures came back with me.</p>
+      </section>
       <section className="personal-archive trace-about" id="about" aria-labelledby="about-title">
         <div className="section-mark"><span>01</span><span className="rule"></span><span>THE PERSON IN THE ASH</span></div>
         <div className="archive-layout">
-          <div className="archive-heading"><h2 id="about-title">I remember wanting<br /><em>to become someone.</em></h2></div>
+          <div className="archive-heading"><h2 id="about-title" data-ash-title><AshWords text="I remember wanting" /><br /><em><AshWords text="to become someone." /></em></h2></div>
           <div className="trace-prose">
-            <p>I'm Aryma. I build security tools and look for the places where a system's promises come apart. It is easier, sometimes, to name what is broken in a machine.</p>
-            <p>I miss the version of me who could spend a whole evening on one small problem and call it a good day. The room would go dark around the screen. Somewhere between the wrong turns, I would understand a little more. That used to feel like enough.</p>
-            <p>Now the answers arrive before I have learned how to ask. The world calls it progress. I keep thinking about everything we used to become while taking the long way there.</p>
-            <p>I still open the editor. Some nights from curiosity; some nights because I do not know where else to put the person I was going to be. What follows is a small record of those hours. A few things made. A few things found. Evidence that I was here, paying attention.</p>
+            <p data-ash-block>I'm Aryma. I build security tools and look for the places where a system's promises come apart. It is easier, sometimes, to name what is broken in a machine.</p>
+            <p data-ash-block>I miss the version of me who could spend a whole evening on one small problem and call it a good day. The room would go dark around the screen. Somewhere between the wrong turns, I would understand a little more. That used to feel like enough.</p>
+            <p data-ash-block>Now the answers arrive before I have learned how to ask. The world calls it progress. I keep thinking about everything we used to become while taking the long way there.</p>
+            <p data-ash-block>I still open the editor. Some nights from curiosity; some nights because I do not know where else to put the person I was going to be. What follows is a small record of those hours. A few things made. A few things found. Evidence that I was here, paying attention.</p>
             <div className="trace-social"><a href="https://github.com/Aryma-f4" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/worldsavior/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
         </div>
       </section>

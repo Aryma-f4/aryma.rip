@@ -1,3 +1,5 @@
+import AshWords from "../components/AshWords";
+import TextAtmosphere from "../components/TextAtmosphere";
 import BlinkEyes from "../components/BlinkEyes";
 import BlinkController from "../components/BlinkController";
 import SceneController from "../components/SceneController";
@@ -6,6 +8,7 @@ export default function Home() {
   return (
     <>
       <SceneController />
+      <TextAtmosphere />
       <BlinkController selector=".character" />
 
   <a className="skip" href="#letter">Skip to the letter</a>
@@ -46,7 +49,7 @@ export default function Home() {
       <span className="edition">A QUIET REBELLION <span>—</span> EST. HUMAN</span>
       <div className="hero-copy">
         <p className="eyebrow"><span className="little-star">✧</span> SOMEWHERE, AFTER THE END</p>
-        <h1 id="hero-title">I miss the world before it knew <em>everything.</em></h1>
+        <h1 id="hero-title" data-ash-title><AshWords text="I miss the world before it knew" /> <em><AshWords text="everything." /></em></h1>
         <p className="intro">When every answer arrives before the question,<br />what becomes of the ones who loved to wonder?</p>
         <button id="listen" data-audio-control="true" className="listen" type="button"><span className="play-triangle"></span><span>Stay a while. Listen.</span><span className="listen-line"></span></button>
       </div>
@@ -77,6 +80,7 @@ export default function Home() {
       <p className="afterword-text reveal">With a song that still hurts.<br />A sky that owes me nothing.<br />And a question I haven't given away.</p>
       <div className="closing-star reveal" aria-hidden="true">✧</div>
       <p className="closing-note reveal">Perhaps that is enough for tonight.</p>
+      <a className="story-bridge" href="/trace-of-me/" data-ash-block>Beyond this rain, a city is still burning. <span aria-hidden="true">→</span></a>
     </section>
   </main>
 
