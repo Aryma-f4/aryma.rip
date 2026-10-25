@@ -30,9 +30,9 @@ export default function TraceOfMe() {
         <div className="identity"><a href="/">aryma<span>.rip</span></a><span className="identity-line"></span><span className="identity-note">a trace of me</span></div>
         <a href="/" className="return-rain">← Back to the rain</a>
         <div className="trace-hero-copy">
-          <p className="eyebrow">THE WORLD BURNED. I REMEMBERED.</p>
-          <h1 id="trace-title">Something of me <br /><em>survived the fire.</em></h1>
-          <p>Not untouched. Not unafraid.<br />Just still here, asking why.</p>
+          <p className="eyebrow">THE WORLD MOVED ON. SOME PART OF ME DIDN'T.</p>
+          <h1 id="trace-title">I came back.<br /><em>Not all of me did.</em></h1>
+          <p>Some nights, surviving feels like<br />carrying a home that no longer exists.</p>
           <a className="trace-enter" href="#about">Follow what remains <span>↓</span></a>
         </div>
         <span className="trace-scene-label">02 / THE REMAINS</span>
@@ -40,8 +40,13 @@ export default function TraceOfMe() {
       <section className="personal-archive trace-about" id="about" aria-labelledby="about-title">
         <div className="section-mark"><span>01</span><span className="rule"></span><span>THE PERSON IN THE ASH</span></div>
         <div className="archive-layout">
-          <div className="archive-heading"><h2 id="about-title">A little less certain.<br /><em>Still curious.</em></h2></div>
-          <div className="trace-prose"><p>I'm Aryma. I build security tools and look for the places where a system's promises come apart.</p><p>I miss learning slowly. The wrong turns. The stubborn little questions that keep a light on long after everyone else has gone to sleep.</p><p>These are a few traces of that person. Work in progress. Lessons carried. Things found, and brought into the light.</p><div className="trace-social"><a href="https://github.com/Aryma-f4" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/worldsavior/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
+          <div className="archive-heading"><h2 id="about-title">I remember wanting<br /><em>to become someone.</em></h2></div>
+          <div className="trace-prose">
+            <p>I'm Aryma. I build security tools and look for the places where a system's promises come apart. It is easier, sometimes, to name what is broken in a machine.</p>
+            <p>I miss the version of me who could spend a whole evening on one small problem and call it a good day. The room would go dark around the screen. Somewhere between the wrong turns, I would understand a little more. That used to feel like enough.</p>
+            <p>Now the answers arrive before I have learned how to ask. The world calls it progress. I keep thinking about everything we used to become while taking the long way there.</p>
+            <p>I still open the editor. Some nights from curiosity; some nights because I do not know where else to put the person I was going to be. What follows is a small record of those hours. A few things made. A few things found. Evidence that I was here, paying attention.</p>
+            <div className="trace-social"><a href="https://github.com/Aryma-f4" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/worldsavior/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
         </div>
       </section>
     <section className="personal-archive" id="working-with" aria-labelledby="working-title">
@@ -49,7 +54,7 @@ export default function TraceOfMe() {
       <div className="archive-layout">
         <div className="archive-heading">
           <h2 id="working-title">What I'm<br /><em>working with.</em></h2>
-          <p>The tools change.<br />The need to understand remains.</p>
+          <p>Things I keep making<br />when I cannot explain<br />what I am trying to hold on to.</p>
         </div>
         <div className="archive-content">
           {/* Add real tools as <li className="tool-entry"><span>Tool name</span><span>What I use it for</span></li>. */}
@@ -72,7 +77,7 @@ export default function TraceOfMe() {
       <div className="archive-layout">
         <div className="archive-heading">
           <h2 id="certifications-title">Certifications<span className="gold-period">.</span></h2>
-          <p>Small milestones.<br />Long nights behind them.</p>
+          <p>A few letters after long nights.<br />They remember what I learned.<br />I remember the room, and the hour.</p>
         </div>
         <div className="archive-content">
           {/* Add verified credentials here. See README.md for the entry template. */}
@@ -89,11 +94,11 @@ export default function TraceOfMe() {
       <section className="personal-archive disclosures" id="disclosures" aria-labelledby="disclosures-title">
         <div className="section-mark"><span>04</span><span className="rule"></span><span>THINGS BROUGHT INTO THE LIGHT</span></div>
         <div className="archive-layout">
-          <div className="archive-heading"><h2 id="disclosures-title">Published<br /><em>disclosures.</em></h2><p>Six traces of looking closer.<br />March, 2026.</p></div>
+          <div className="archive-heading"><h2 id="disclosures-title">Published<br /><em>disclosures.</em></h2><p>Six fractures I could give a name to.<br />For once, looking closer<br />left something I could point to.<br />March, 2026.</p></div>
           <ol className="disclosure-list">{advisories.map(item=><li key={item.id}><a href={item.url} target="_blank" rel="noopener noreferrer"><div className="disclosure-meta"><span>{item.project}</span><time>{item.week}</time></div><h3>{item.id}<span aria-hidden="true">↗</span></h3><p>{item.title}</p></a></li>)}</ol>
         </div>
       </section>
-      <div className="trace-ending"><span>✧</span><p>Even here,<br /><em>something human remains.</em></p><a href="/">Return to the quiet →</a></div>
+      <div className="trace-ending"><span>✧</span><p>The fire has gone quiet.<br /><em>I still hear what it took.</em></p><p className="trace-ending-note">Some things do not need to be repaired tonight.<br />Only remembered, without being asked<br />to become useful.</p><a href="/">Return to the quiet →</a></div>
     </main>
     <footer><a className="footer-brand" href="/">aryma.rip</a><span>STILL HUMAN. STILL HERE.</span><a href="/">Back to the rain <span>↗</span></a><small>A personal tribute to Terraria Calamity.</small></footer>
     <aside className="music-player trace-player" data-audio-control="true" aria-label="Interlude soundtrack controls">
