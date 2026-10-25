@@ -71,3 +71,5 @@ The home footer opens `/trace-of-me/`. The original home poems remain on `/`; pr
 The trace page uses the supplied “Catastrophes before the calamity — Interlude 03” MP3 and separate simple anime layers in `public/assets/trace-city.png`, `trace-avatar.png` and `trace-exo.png`. Home uses a locally synthesized, filtered rain ambience (`public/assets/rain.mp3`), with an independent rain toggle. Pausing the home music pauses rain too. Each route owns and cleans up its own audio. Both attempt audible autoplay; browser policy can require a first interaction.
 
 Singing follows interpolated samples from the isolated vocal envelope, with elapsed-time attack/release smoothing, changing lip width and a subtle seated lean. Reduced-motion preferences disable these movements.
+
+Both characters blink with pose-specific vector eyelids. `components/BlinkEyes.jsx` maps lids to the four artwork variants; `BlinkController.jsx` schedules 225 ms blinks with varying 3.8–8.2 second rests. Blinking stops outside the viewport, in hidden tabs, and for reduced-motion preferences; timers and animation frames are removed on unmount.

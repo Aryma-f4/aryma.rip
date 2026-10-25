@@ -1,3 +1,5 @@
+import BlinkEyes from "../../components/BlinkEyes";
+import BlinkController from "../../components/BlinkController";
 import TraceController from '../../components/TraceController';
 import { advisories } from '../../lib/advisories.mjs';
 
@@ -9,6 +11,7 @@ export const metadata = {
 export default function TraceOfMe() {
   return <div className="trace-page">
     <TraceController />
+    <BlinkController selector=".trace-avatar-figure" />
     <a className="skip" href="#about">Skip to the archive</a>
     <main>
       <section className="trace-hero" aria-labelledby="trace-title">
@@ -20,7 +23,7 @@ export default function TraceOfMe() {
             <span className="exo-core"></span><span className="exo-burst"></span>
           </div>
           <div className="trace-fireglow" aria-hidden="true"></div>
-          <img className="trace-avatar" src="/assets/trace-avatar.png" alt="" />
+          <div className="trace-avatar trace-avatar-figure"><img src="/assets/trace-avatar.png" alt="" /><BlinkEyes pose="avatar" /></div>
         </div>
         <div className="trace-shade" aria-hidden="true"></div>
         <div className="trace-embers" aria-hidden="true">{Array.from({length:24},(_,i)=><i key={i} style={{'--i':i}} />)}</div>

@@ -1,9 +1,12 @@
+import BlinkEyes from "../components/BlinkEyes";
+import BlinkController from "../components/BlinkController";
 import SceneController from "../components/SceneController";
 
 export default function Home() {
   return (
     <>
       <SceneController />
+      <BlinkController selector=".character" />
 
   <a className="skip" href="#letter">Skip to the letter</a>
   <main>
@@ -17,16 +20,19 @@ export default function Home() {
             <div className="character-state resting-pose">
               <img className="character-body" src="/assets/calamitas.png" alt="" fetchPriority="high" />
               <img className="character-cloak" src="/assets/calamitas.png" alt="" />
+              <BlinkEyes pose="resting" />
             </div>
             <div className="character-state singing-pose">
               <img className="character-body" src="/assets/calamitas-singing.png" alt="" />
               <img className="character-cloak" src="/assets/calamitas-singing.png" alt="" />
+              <BlinkEyes pose="singing" />
               <span className="mouth-cover"></span><div className="mouth"></div>
               <span className="tear tear-left"></span><span className="tear tear-right"></span>
             </div>
             <div className="character-state aftermath-pose">
               <img className="character-body" src="/assets/calamitas-aftermath.png" alt="" />
               <img className="character-cloak" src="/assets/calamitas-aftermath.png" alt="" />
+              <BlinkEyes pose="aftermath" />
             </div>
           </div>
         </div>
