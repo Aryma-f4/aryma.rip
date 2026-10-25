@@ -1,68 +1,65 @@
 # aryma.rip
 
-A buildless, cinematic personal website. All visitor-facing copy is English.
+A cinematic personal website built with **Next.js App Router and React**, ready to import into Vercel. English poetry, a layered Calamity-inspired night scene, rain, fireflies, and a song-driven three-pose character.
 
-## Run locally
+## Local development
 
-From this directory:
+Use Node.js 22 or newer (Node.js 24 LTS recommended):
 
 ```sh
-python3 -m http.server 4173 --directory dist
+npm ci
+npm run dev
 ```
 
-Open http://localhost:4173. No installation or build is required.
+Open http://localhost:3000.
 
-## Files
+```sh
+npm test
+npm run build
+```
 
-- `dist/index.html`: English poetry, scene structure, soundtrack controls.
-- `dist/styles.css`: responsive composition, parallax, cloak motion and pose crossfade.
-- `dist/app.js`: playback, subtitle timing, singing pose and canvas rain/fireflies.
-- `dist/motion.mjs`: testable interval lookup and motion limits.
-- `dist/lyrics.mjs`: timed subtitles and isolated-vocal amplitude envelope from the supplied recording.
-- `dist/assets/`: generated images and supplied music.
-- `ART-DIRECTION.md`: final generation prompts and provenance.
+The production build exports the site to `out/`. Use `npm run dev` for local playback testing; the Next.js server supports the HTTP Range requests required for soundtrack seeking.
 
-Music: Sky After Rain by PinpinNeon, vocals SOLARIA. The local recording was supplied by the user. Original song information: https://soundcloud.com/possessedbypinkiepie/sky-after-rain
+## Deploy to Vercel
 
-Autoplay with sound is attempted on load. Browsers may require the play button or “Stay a while. Listen.” gesture. The vocals drive a stylized mouth animation, not phoneme-accurate lip sync. Reduced-motion settings disable continuous motion while retaining subtitles and pose states.
+1. Import [Aryma-f4/aryma.rip](https://github.com/Aryma-f4/aryma.rip) as a new Vercel project.
+2. Use the repository root (`.`), framework preset **Next.js**, and build command **npm run build**. Leave Output Directory at its framework default; `next.config.mjs` enables Next.js static export.
+3. Deploy. No environment variables, database, or server functions are required.
+4. Add `aryma.rip` under the Vercel project's Domains settings and use the DNS records Vercel supplies for that project. If moving from Sites, replace the old Sites routing records rather than combining the two sets.
 
-`aryma.rip` is the intended custom domain. A title/wordmark alone does not connect DNS. Domain activation must be verified separately.
+Official documentation: [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs), [Next.js static export](https://nextjs.org/docs/app/guides/static-exports), [Vercel Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions).
 
-## After the song
+## Source layout
 
-A third generated pose lowers her hands and keeps the tears visible after a vocal passage. The aftermath lingers through the final instrumental and the next automatic loop, while a new vocal passage returns to the singing pose. Explicit seeking back before the first vocal passage resets the character to her original resting state. Reduced-motion settings retain these state changes without the crossfade or continuous motion.
+- `app/page.jsx`: scene markup, original poetry, tools and certification entries.
+- `app/layout.jsx`: English document, metadata and image preloads.
+- `app/globals.css`: responsive composition, raised terrain, parallax and cloak/pose animation.
+- `components/SceneController.jsx`: mounts the browser runtime with React lifecycle cleanup.
+- `lib/scene.js`: particles, soundtrack controls, subtitles, pose changes and mouth animation.
+- `lib/autoplay.mjs`: audible autoplay attempt and first-interaction fallback.
+- `lib/motion.mjs`: pure interval and pose helpers.
+- `lib/lyrics.mjs`: timed subtitles and isolated-vocal amplitude envelope.
+- `public/assets/`: generated character/scenery artwork and supplied soundtrack.
+- `tests/`: autoplay and motion regression tests (`npm test`).
+- `ART-DIRECTION.md`: final generation prompts and artwork provenance.
+- `.openai/hosting.json`: retains the existing Sites preview identity and serves `out/` after a production build. Vercel does not use this file.
+
+## Autoplay and singing
+
+The soundtrack attempts to play audibly on page load. Browser autoplay policy can block this. In that case, the first click/tap or ordinary keypress on the page retries playback. The dedicated play control also works; an intentional pause stays paused. No website can guarantee audible autoplay before interaction in browsers that block it.
+
+Music: **Sky After Rain** by PinpinNeon, vocals SOLARIA. The recording was supplied by the owner. [Composer's original track](https://soundcloud.com/possessedbypinkiepie/sky-after-rain).
+
+Lyrics were cross-checked with the composer's text; phrase timing is approximate automated vocal alignment. Mouth movement uses the isolated-vocal amplitude envelope and is stylized rather than phoneme-accurate lip sync. Reduced-motion preferences disable continuous animation while retaining subtitle and pose states.
+
+After vocals, the character lowers her hands and quietly cries. This aftermath lingers through the outro and the next instrumental loop. The next vocal passage returns to the singing pose; explicit seeking before the first passage resets the initial resting pose.
 
 ## Tools and certifications
 
-The two personal archive sections live in `dist/index.html`, between the letter and the closing poem. Current entries are Gulpsuite and WorldShellFinder, with CPENT (EC-Council), CWSE (Hackviser), and CAPT (Hackviser). Personal names are omitted. Dates and credential links are not displayed because they have not been supplied.
+Edit the entries in `app/page.jsx`. Current tools are **Gulpsuite** and **WorldShellFinder**. Certifications are **CPENT (EC-Council)**, **CWSE (Hackviser)** and **CAPT (Hackviser)**. Personal names are omitted. Dates and credential links are omitted until supplied.
 
-### What I'm working with
+Tools use `li.tool-entry` with a title and short description. Certifications use `li.credential-entry` with an `h3` title and issuer paragraph. Add an external credential link only when a real URL is available, using `target="_blank" rel="noopener noreferrer"`.
 
-Add entries inside `.tool-list`:
+## Rollback
 
-```html
-<li class="tool-entry">
-  <span>Actual tool or technology</span>
-  <span>A short description of how you use it</span>
-</li>
-```
-
-After adding entries, remove the `.archive-note` paragraph in that section.
-
-### Certifications
-
-Add entries inside `.credential-list`:
-
-```html
-<li class="credential-entry">
-  <div>
-    <h3>Actual certification title</h3>
-    <p>Issuing organization · Year earned</p>
-  </div>
-  <a href="https://credential.example/your-credential" target="_blank" rel="noopener noreferrer">View credential <span aria-hidden="true">↗</span></a>
-</li>
-```
-
-Replace the example link with the real credential URL, or omit the link if none exists. After adding entries, remove the `.archive-note` paragraph in that section.
-
-These templates are documentation only; they are not displayed as real credentials on the website.
+The last buildless version is Git commit `b6d0989`. It retains the original HTML/JS assets in history. Revert the migration commit to restore that version; no portfolio content or artwork needs to be recreated.
