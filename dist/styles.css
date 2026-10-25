@@ -24,3 +24,14 @@
 .tool-entry a{transition:color .2s}.tool-entry a:hover{color:var(--gold)}.entry-arrow{font-family:'Manrope',sans-serif;font-size:12px;color:var(--gold);vertical-align:middle;white-space:nowrap}
 @media(max-width:600px){.tool-entry{flex-direction:column;align-items:flex-start;gap:8px}.tool-entry>span:last-child{max-width:100%;text-align:left}}
 @media(min-width:601px) and (max-width:900px){.tool-entry{flex-direction:column;align-items:flex-start;gap:8px}.tool-entry>span:last-child{max-width:100%;text-align:left}}
+/* Anchor every pose to a raised foreground slope, with a shared parallax plane. */
+.character-position{height:58%;right:10%;bottom:8%}
+.hill{left:-4%;right:-4%;height:36%;bottom:-1%;background:url('assets/ground.svg') center top/100% 100% no-repeat;clip-path:none;opacity:1;z-index:1}
+.character-position,.hill{transform:translate3d(calc(var(--mx)*-20px),calc(var(--my)*-9px + var(--scroll)*.045px),0)}
+.character-position::before{content:'';position:absolute;left:25%;top:57%;width:52%;height:5%;border-radius:50%;background:radial-gradient(ellipse,#090f1c88,transparent 70%);z-index:-1;transform:rotate(-3deg)}
+.character{transform-origin:48% 58%;animation:grounded-breathe 7s ease-in-out infinite}
+@keyframes grounded-breathe{50%{transform:scaleY(1.004)}}
+@media(min-width:1600px){.character-position{right:11%}}
+@media(max-width:900px){.character-position{height:48%;right:5%;bottom:9%}.hill{height:34%}}
+@media(max-width:600px){.character-position{height:42%;right:5%;bottom:10%}.hill{height:32%}}
+@media(prefers-reduced-motion:reduce){.character-position,.hill{transform:none}.character{animation:none}}
