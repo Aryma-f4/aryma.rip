@@ -1,4 +1,4 @@
-# aryma.rip — After the rain
+# aryma.rip
 
 A buildless, cinematic personal website. All visitor-facing copy is English.
 
@@ -31,3 +31,38 @@ Autoplay with sound is attempted on load. Browsers may require the play button o
 ## After the song
 
 A third generated pose lowers her hands and keeps the tears visible after a vocal passage. The aftermath lingers through the final instrumental and the next automatic loop, while a new vocal passage returns to the singing pose. Explicit seeking back before the first vocal passage resets the character to her original resting state. Reduced-motion settings retain these state changes without the crossfade or continuous motion.
+
+## Tools and certifications
+
+The two personal archive sections live in `dist/index.html`, between the letter and the closing poem. They intentionally contain no invented tools or qualifications.
+
+### What I'm working with
+
+Add entries inside `.tool-list`:
+
+```html
+<li class="tool-entry">
+  <span>Actual tool or technology</span>
+  <span>A short description of how you use it</span>
+</li>
+```
+
+After adding entries, remove the `.archive-note` paragraph in that section.
+
+### Certifications
+
+Add entries inside `.credential-list`:
+
+```html
+<li class="credential-entry">
+  <div>
+    <h3>Actual certification title</h3>
+    <p>Issuing organization · Year earned</p>
+  </div>
+  <a href="https://credential.example/your-credential" target="_blank" rel="noopener noreferrer">View credential <span aria-hidden="true">↗</span></a>
+</li>
+```
+
+Replace the example link with the real credential URL, or omit the link if none exists. After adding entries, remove the `.archive-note` paragraph in that section.
+
+These templates are documentation only; they are not displayed as real credentials on the website.
