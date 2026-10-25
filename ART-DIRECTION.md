@@ -1,0 +1,18 @@
+# Artwork provenance
+
+Generated with the built-in image_gen tool. The first ornate versions were superseded by the user's request for simpler flat anime art.
+
+## Background final prompt
+
+Use case: illustration-story. New website background, wide 16:9. Simple hand-drawn 2D anime landscape, deliberately minimal, flat colors and soft cel shading like a quiet animation background. Midnight indigo sky occupies upper 70 percent, a few tiny stars, large simple dark lavender cloud shapes, distant muted blue mountain silhouettes, a few simplified pine silhouettes at far edges, grassy hill silhouette at bottom. Small crescent moon upper right. Left area almost empty to place poetry. Restrained palette of 5 muted blue-indigo tones. Calm melancholic lo-fi Terraria-inspired night. No detailed castle, no realistic textures, no intricate detail, no rain baked in, no characters, no text. Match simplicity of supplied night-sky reference.
+
+## Resting character final prompt
+
+Use case: illustration-story. Create a SIMPLE clean 2D anime full-body Supreme Calamitas character cutout based on supplied reference. She is a young adult woman sitting quietly on an invisible grassy ledge, knees bent, looking slightly left. Short straight pale white hair with a few longer front strands, two thin black horns, simple glowing red eyes, red hood and large dark muted burgundy cloak with one simple gold border, pale cream cravat, dark leggings and boots. Small neutral closed mouth visible around center of face. Simplified anime illustration, clean dark outlines, FLAT COLORS, only two or three cel shading tones, big simple shapes, no ornate details, no jewelry except small red clasp, no realistic skin, no fabric textures, no lace, no elaborate costume. Wistful expression. Cloak tail extends a little to the right so it can sway. Full silhouette inside frame, portrait composition. Actual transparent RGBA background with alpha zero outside character. No colored backdrop, no gradients behind character, no glow behind character, no ground, no shadows, no text. Visually match the simple sketch character in reference, polished but not detailed.
+
+## Singing pose final prompt
+
+Edit target: Image 1, the simple flat-color Supreme Calamitas transparent cutout. Supporting reference Image 2 is ONLY for sorrowful singing emotion and luminous tear mood, not its character design. Create a singing-pose alternate for the exact same website character. Keep the exact same SIMPLE flat anime style, clean outlines, 2-3 cel-shading colors, pale short white hair, red eyes, thin black horns, plain burgundy hood/cloak with gold border, cream cravat and dark boots. Preserve canvas aspect, character scale, seated lower-body position and feet placement so this swaps seamlessly with resting pose. Lift the hand previously resting by her cheek and extend that arm diagonally UP toward the upper right corner with open palm reaching longingly toward the sky, hand completely inside frame. Keep head and face approximately in same position, lift gaze slightly, eyebrows tilted in deep sadness, small mouth open in song. Two delicate translucent tears stream from eyes down cheeks, watery silver-white highlights with tiny warm gold ember light on the edges, like liquid water illuminated by fire, NOT huge flames, NOT face markings. Keep tears subtle and beautiful. No added ornate costume detail, no realistic painting, no dramatic rendering. Actual RGBA transparent background, alpha zero outside silhouette, no scenery or backdrop. No text. Full character within frame.
+
+Final assets live in dist/assets/night.png, dist/assets/calamitas.png, and dist/assets/calamitas-singing.png. Character alpha is preserved.
+
