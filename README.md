@@ -81,3 +81,13 @@ Anime.js 4.5.0 drives the smoke-like word entrances, one-time prose reveals and 
 The original three-part fan narrative in Trace of Me connects the city's promise, the Exo Mech fire, and Calamitas singing in the rain. The real portfolio archive follows it. Edit that story in `app/trace-of-me/page.jsx`.
 
 Implementation references: [Anime.js animation](https://animejs.com/documentation/animation/), [revert cleanup](https://animejs.com/documentation/animation/animation-methods/revert/).
+
+## Music attribution
+
+Both page footers display the complete soundtrack credits and source links, with the current page's track marked:
+
+- **ฟ้าหลังฝน (Sky After Rain)** — music and lyrics by **PinpinNeon**, vocals **SOLARIA**; Infernum Mod title theme. [Composer's original upload and credits](https://www.youtube.com/watch?v=zu9OVFLFV9A).
+- **Catastrophes Before the Calamity — Interlude 03** — composed and produced by **DM DOKURO**, from *The Tale of a Cruel World (Calamity Original Soundtrack)*. [Official artist release](https://www.youtube.com/watch?v=zYZiXsDGfpU), [artist's Bandcamp track and full recording credits](https://dmdokuro.bandcamp.com/track/catastrophes-before-the-calamity).
+- **Rain ambience** — synthesized and filtered locally for this site; separate from both original songs.
+
+The attribution is maintained in `components/MusicCredits.jsx`.

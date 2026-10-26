@@ -1,3 +1,4 @@
+import MusicCredits from "../components/MusicCredits";
 import HomeOrnaments from "../components/HomeOrnaments";
 import AshWords from "../components/AshWords";
 import TextAtmosphere from "../components/TextAtmosphere";
@@ -87,7 +88,7 @@ export default function Home() {
     </section>
   </main>
 
-  <footer><a className="footer-brand" href="#">aryma.rip</a><span>STILL HUMAN. STILL HERE.</span><a href="/trace-of-me/">A trace of me <span aria-hidden="true">↗</span></a><small>A personal tribute to Terraria Calamity. Poetry is original.</small></footer>
+  <footer><a className="footer-brand" href="#">aryma.rip</a><span>STILL HUMAN. STILL HERE.</span><a href="/trace-of-me/">A trace of me <span aria-hidden="true">↗</span></a><MusicCredits current="sky" /><small>A personal tribute to Terraria Calamity. Poetry is original.</small></footer>
 
   <aside className="music-player" data-audio-control="true" aria-label="Soundtrack controls">
     <button id="audio-toggle" className="audio-toggle" type="button" aria-label="Play soundtrack" aria-pressed="false"><span className="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>

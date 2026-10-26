@@ -1,3 +1,4 @@
+import MusicCredits from "../../components/MusicCredits";
 import AshWords from "../../components/AshWords";
 import TextAtmosphere from "../../components/TextAtmosphere";
 import BlinkEyes from "../../components/BlinkEyes";
@@ -133,7 +134,7 @@ export default function TraceOfMe() {
       </section>
       <div className="trace-ending"><span>✧</span><p>The fire has gone quiet.<br /><em>I still hear what it took.</em></p><p className="trace-ending-note">Some things do not need to be repaired tonight.<br />Only remembered, without being asked<br />to become useful.</p><a href="/">Return to the quiet →</a></div>
     </main>
-    <footer><a className="footer-brand" href="/">aryma.rip</a><span>STILL HUMAN. STILL HERE.</span><a href="/">Back to the rain <span>↗</span></a><small>A personal tribute to Terraria Calamity.</small></footer>
+    <footer><a className="footer-brand" href="/">aryma.rip</a><span>STILL HUMAN. STILL HERE.</span><a href="/">Back to the rain <span>↗</span></a><MusicCredits current="interlude" /><small>A personal tribute to Terraria Calamity.</small></footer>
     <aside className="music-player trace-player" data-audio-control="true" aria-label="Interlude soundtrack controls">
       <button id="trace-toggle" className="audio-toggle" type="button" aria-label="Play interlude" aria-pressed="false"><span className="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
       <div className="track"><span className="track-title">Catastrophes before the calamity</span><span id="trace-status" className="track-detail" role="status">INTERLUDE 03 · SOUND OFF</span></div>
