@@ -27,9 +27,10 @@ export default function Home() {
               <img className="character-body" src="/assets/calamitas-v2.png" alt="" fetchPriority="high" />
               <BlinkEyes pose="resting" />
             </div>
-            <div className="character-state transition-pose" data-character-pose="transition" hidden>
-              <img className="character-body" src="/assets/calamitas-arm-half.png" alt="" />
+            <div className="character-state transition-pose" data-character-pose="transition" data-eyes="singing" hidden>
+              <img className="character-body" src="/assets/calamitas-arm-release.png" alt="" />
               <BlinkEyes pose="singing" />
+              <BlinkEyes pose="aftermath" />
             </div>
             <div className="character-state singing-pose" data-character-pose="singing" hidden>
               <img className="character-body" src="/assets/calamitas-singing-v2.png" alt="" />

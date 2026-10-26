@@ -51,10 +51,29 @@ test('aftermath lingers through a new instrumental loop and resets on explicit r
 
 test('a half-raised drawing anticipates vocals and lowers the arm before the aftermath',()=>{
  const passages=[{start:108.5,end:148.52},{start:149.78,end:181.1}];
- assert.equal(helpers.characterPose(107.8,true,passages,false),'resting');
+ assert.equal(helpers.characterPose(106.8,true,passages,false),'resting');
  assert.equal(helpers.characterPose(108,true,passages,false),'transition');
  assert.equal(helpers.characterPose(108.5,true,passages,false),'singing');
  assert.equal(helpers.characterPose(120,false,passages,false),'singing');
  assert.equal(helpers.characterPose(181.3,true,passages,true),'transition');
- assert.equal(helpers.characterPose(181.7,true,passages,true),'aftermath');
+ assert.equal(helpers.characterPose(182.8,true,passages,true),'aftermath');
+});
+
+test('24-frame transitions have 1.6 seconds to raise and settle without cutting vocals',()=>{
+ const passages=[{start:10,end:20},{start:30,end:40}];
+ assert.equal(helpers.characterPose(8.39,true,passages,false),'resting');
+ assert.equal(helpers.characterPose(8.4,true,passages,false),'transition');
+ assert.equal(helpers.characterPose(10,true,passages,false),'singing');
+ assert.equal(helpers.characterPose(21.59,true,passages,false),'transition');
+ assert.equal(helpers.characterPose(21.6,true,passages,false),'aftermath');
+ assert.equal(typeof helpers.transitionAt,'function');
+ assert.equal(helpers.transitionAt(8.4,passages).direction,'raising');
+ assert.equal(helpers.transitionAt(20,passages).direction,'lowering');
+ assert.ok(helpers.transitionAt(9.2,passages).level>.49);
+ assert.ok(helpers.transitionAt(20.8,passages).level<.51);
+});
+test('nearby phrases retain their singing pose when full transitions would overlap',()=>{
+ const passages=[{start:10,end:20},{start:22.5,end:30}];
+ assert.equal(helpers.characterPose(21.8,true,passages,false),'singing');
+ assert.equal(helpers.transitionAt(21.8,passages),null);
 });
