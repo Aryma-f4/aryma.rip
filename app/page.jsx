@@ -1,3 +1,4 @@
+import HomeOrnaments from "../components/HomeOrnaments";
 import AshWords from "../components/AshWords";
 import TextAtmosphere from "../components/TextAtmosphere";
 import BlinkEyes from "../components/BlinkEyes";
@@ -60,6 +61,7 @@ export default function Home() {
     </section>
 
     <section className="letter" id="letter" aria-labelledby="letter-title">
+      <HomeOrnaments variant="letter" />
       <div className="section-mark"><span>01</span><span className="rule"></span><span>A LETTER TO NO ONE</span></div>
       <div className="letter-layout">
         <h2 id="letter-title" className="reveal">We taught the machines<br />to dream.<br /><em>I stopped sleeping.</em></h2>
@@ -74,6 +76,7 @@ export default function Home() {
     </section>
 
     <section className="afterword" aria-labelledby="afterword-title">
+      <HomeOrnaments variant="afterword" />
       <div className="afterword-glow" aria-hidden="true"></div>
       <p className="eyebrow reveal">02 / WHAT THE RAIN LEAVES BEHIND</p>
       <h2 id="afterword-title" className="reveal">Let the world hurry.<br /><em>I'll be here.</em></h2>
