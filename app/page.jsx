@@ -1,4 +1,5 @@
-import SingingMotionFilter from "../components/SingingMotionFilter";
+import CharacterLighting from "../components/CharacterLighting";
+import { lightingFor } from "../lib/character-lighting.mjs";
 import MusicCredits from "../components/MusicCredits";
 import HomeOrnaments from "../components/HomeOrnaments";
 import AshWords from "../components/AshWords";
@@ -23,22 +24,22 @@ export default function Home() {
         <div className="mist mist-back" data-depth="0.45"></div>
         <div className="character-position" data-depth="1.2">
           <div className="character">
-            <div className="character-state resting-pose" data-character-pose="resting">
+            <div className="character-state resting-pose" data-character-pose="resting" data-lighting={lightingFor("/assets/calamitas-v2.png").id} style={{filter:`url(#${lightingFor("/assets/calamitas-v2.png").id})`}}>
               <img className="character-body" src="/assets/calamitas-v2.png" alt="" fetchPriority="high" />
               <BlinkEyes pose="resting" />
             </div>
-            <div className="character-state transition-pose" data-character-pose="transition" data-eyes="singing" hidden>
+            <div className="character-state transition-pose" data-character-pose="transition" data-lighting={lightingFor("/assets/calamitas-arm-prepare.png").id} style={{filter:`url(#${lightingFor("/assets/calamitas-arm-prepare.png").id})`}} data-eyes="singing" hidden>
               <img className="character-body" src="/assets/calamitas-arm-prepare.png" alt="" />
               <BlinkEyes pose="singing" />
               <BlinkEyes pose="aftermath" />
             </div>
-            <div className="character-state singing-pose" data-character-pose="singing" hidden>
+            <div className="character-state singing-pose" data-character-pose="singing" data-lighting={lightingFor("/assets/calamitas-singing-v2.png").id} style={{filter:`url(#${lightingFor("/assets/calamitas-singing-v2.png").id})`}} hidden>
               <img className="character-body" src="/assets/calamitas-singing-v2.png" alt="" />
               <BlinkEyes pose="singing" />
               <span className="mouth-cover"></span><div className="mouth"></div>
               <span className="tear tear-left"></span><span className="tear tear-right"></span>
             </div>
-            <div className="character-state aftermath-pose" data-character-pose="aftermath" hidden>
+            <div className="character-state aftermath-pose" data-character-pose="aftermath" data-lighting={lightingFor("/assets/calamitas-aftermath-v2.png").id} style={{filter:`url(#${lightingFor("/assets/calamitas-aftermath-v2.png").id})`}} hidden>
               <img className="character-body" src="/assets/calamitas-aftermath-v2.png" alt="" />
               <BlinkEyes pose="aftermath" />
             </div>
@@ -103,7 +104,7 @@ export default function Home() {
   <button id="rain-toggle" className="rain-toggle" data-audio-control="true" type="button" aria-pressed="true" aria-label="Mute rain ambience">Rain · on</button>
   <audio id="rain-audio" src="/assets/rain.mp3" preload="auto" loop></audio>
   <audio id="soundtrack" src="/assets/sky-after-rain.mp3" preload="auto" autoPlay playsInline loop></audio>
-  <SingingMotionFilter />
+  <CharacterLighting />
 
 
     </>

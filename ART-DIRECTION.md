@@ -75,3 +75,11 @@ Per-frame instructions inserted into that prompt:
 - Extend (rise to high): Lift palm a tiny amount, halfway between the reference heights, keeping forearm nearly vertical and elbow slightly bent. Small controlled upward continuation, leave ample transparent space beside hand.
 - Unfurl (high to reach): Elbow extends diagonally upward, hand halfway between high and full reach, higher and more outward than first, but lower than second. Open palm reaching wistfully, natural relaxed wrist.
 - Settle (low to aftermath): LOWERING transition. Bring the gesturing hand gently inward and down, palm tilted toward the knee, wrist hovering just above lap before hand settles over other hand. Shoulders lower slightly, gaze softens downward halfway to second reference. Mouth closed, no gesture upward.
+
+## Consistent night light and intact silhouette
+
+Read-only alpha checks found no enclosed transparent regions of at least 10 pixels in the Calamitas assets. The reported moving hand/cloak artifact coincides with the displacement-field regions. The runtime displacement shader has been removed completely. Whole-image Anime.js translation/rotation now preserves every original painted pixel and alpha edge, including the hands, cloak, legs, boots and facial overlays. No PNG was edited or regenerated in this correction.
+
+All active cels share the resting skin-midtone reference (245, 201, 182) through small per-channel RGB gains. The correction applies to the whole pose, including the mouth and blink; alpha is unchanged. The shared ambient brightness is .83 on desktop and mobile, with .8 saturation. The original outlines, palette and shading are retained rather than redrawn. Calibration records are in `lib/character-lighting.mjs`.
+
+Per the latest direction, idle motion is restored as a restrained .15-degree sway and subpixel drift on one original image. It has no breathing scale and no source swaps. A visible-time clock runs independently of paused/blocked audio. Reduced motion disables it. The artwork changes at the vocal transitions retain their corrected night lighting.

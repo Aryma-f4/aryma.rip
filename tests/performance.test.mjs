@@ -2,16 +2,15 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { performanceAt, createPerformanceSampler, neutralPerformance } from '../lib/performance.mjs';
 
-test('instrumental and aftermath keep the same drawing with no body or cloth motion',()=>{
- for(const pose of ['resting','aftermath']) {
-  const first=performanceAt({time:0,pose,playing:true,vocalActive:false});
-  for(let time=0;time<20;time+=.13) {
-   const p=performanceAt({time,pose,playing:true,vocalActive:false});
-   assert.deepEqual(p,first);
-   assert.equal(p.lean,0);assert.equal(p.stretch,1);
-   assert.equal(p.armX,0);assert.equal(p.armY,0);assert.equal(p.cloth,0);
-  }
- }
+test('idle moves gently on one drawing without breathing scale or artwork swaps',()=>{
+ const frames=Array.from({length:80},(_,i)=>performanceAt({time:i/10,pose:'resting'}));
+ assert.equal(new Set(frames.map(p=>p.src)).size,1);
+ assert.ok(new Set(frames.map(p=>p.lean)).size>20);
+ for(const p of frames){assert.equal(p.stretch,1);assert.ok(Math.abs(p.lean)<=.16);assert.ok(Math.abs(p.armY)<=2);}
+ assert.deepEqual(performanceAt({time:2,pose:'resting',reducedMotion:true}),neutralPerformance());
+});
+test('aftermath stays settled on its existing drawing',()=>{
+ assert.deepEqual(performanceAt({time:0,pose:'aftermath'}),performanceAt({time:8,pose:'aftermath'}));
 });
 test('singing cycles through 192 distinct bounded poses at 30 fps and loops after 6.4 seconds',()=>{
  const frames=Array.from({length:192},(_,i)=>performanceAt({time:i/30,pose:'singing',playing:true,vocalActive:true}));
