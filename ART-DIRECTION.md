@@ -34,3 +34,7 @@ The three v2 Calamitas sprites remove the erroneous diagonal third shin from the
 ## Limited animation frames
 
 Four additional registered transparent drawings extend the corrected v2 sprites: `calamitas-idle-inhale.png`, `calamitas-arm-half.png`, `calamitas-arm-high.png`, `calamitas-singing-accent.png`. The arm path rises toward the upper right in two stages and reverses after vocals. Selected frames retain two legs, two boots, natural wrists and five fingers per visible open hand. Rejected hand variants are not used. The body uses held drawings rather than crossfades or deforming anatomy; the separate mouth remains smooth.
+
+## 48-frame singing revision
+
+The instrumental idle no longer alternates inhale drawings or animates the cloak. Singing now uses a 48-pose numerical rig loop at 15 fps (3.2 seconds), built on the corrected single singing drawing. This is runtime animation rather than 48 new generated drawings. The localized displacement fields stay on the raised arm and outer cloak; face/lips, seated legs and boots retain their registration. Small whole-body lean is held on the same frame clock, with no breathing stretch. Pause and vocal gaps restore neutral motion. The two drawn arm-transition frames remain.

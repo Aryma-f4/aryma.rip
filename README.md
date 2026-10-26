@@ -92,12 +92,12 @@ Both page footers display the complete soundtrack credits and source links, with
 
 The attribution is maintained in `components/MusicCredits.jsx`.
 
-Calamitas renders one image per pose. `lib/pose-render.mjs` swaps the visible pose atomically so resting, singing and aftermath never crossfade over each other. `ClothWindFilter.jsx` applies wind to a single image using a displacement map that fades from a neutral face region into the cloak; no duplicate character layer is used.
+Calamitas renders one image per pose. `lib/pose-render.mjs` swaps resting, transition, singing and aftermath atomically; silhouettes never crossfade. `SingingMotionFilter.jsx` moves the raised arm and outer cloak on the single singing image; its map leaves the face, seated legs and matching boots stationary. No duplicate character layer is used.
 
 ## Character performance
 
-The actor uses seven separate drawings: resting, inhale, half-raised arm, nearly-raised arm, singing reach, singing accent and quiet aftermath. All frames are inspected against the corrected two-leg/two-boot design. `lib/performance.mjs` holds body drawings and seat motion at 12 fps; body/hand poses do not crossfade or use localized deformation. Mouth motion remains independently smoothed from the vocal envelope.
+The home character stays still during instrumental music and after the performance: one resting/aftermath drawing, no inhale swap, no breathing scale and no idle cloak filter. Blinks remain independent.
 
-The arm rises through two in-between drawings during the 0.6 seconds before vocals. Short gaps between vocal passages keep it raised. After the final passage it lowers through the drawings in reverse over 0.5 seconds, then settles into the crying aftermath. Pausing or seeking retains the drawing appropriate to the selected timestamp. Lyrics still clear in instrumental gaps.
+While vocals play, `lib/performance.mjs` samples a **48-frame rig cycle at 15 fps**, repeating every **3.2 seconds**. These are 48 numerical poses of the existing corrected singing illustration, not 48 separately drawn raster illustrations. Local arm/outer-cloak displacement and a restrained seated lean provide motion without alternating incompatible silhouettes. Body frames are held without interpolation; lips follow the isolated vocal envelope independently. The audio clock controls the frame, so pause, resume and seeks remain synchronized. Pause, instrumental gaps and reduced motion immediately clear the rig motion.
 
-Frames preload off-DOM and only decoded frames are swapped into the one visible image, preventing blank flashes and overlapping anatomy. The idle inhale loop runs before playback starts. Reduced motion disables continuous movement. The existing hero frame loop suspends offscreen/in hidden tabs and resets seat motion on unmount.
+The arm still passes through half-raised and nearly-raised drawings during the 0.6 seconds before vocals, reversing for 0.5 seconds after vocals. Short gaps retain the raised pose with a closed mouth and stationary body. Decoded-image preloading protects pose swaps; exactly one complete character is visible at a time. The older inhale/accent assets remain in the repository but are no longer played.

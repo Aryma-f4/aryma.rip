@@ -1,4 +1,4 @@
-import ClothWindFilter from "../components/ClothWindFilter";
+import SingingMotionFilter from "../components/SingingMotionFilter";
 import MusicCredits from "../components/MusicCredits";
 import HomeOrnaments from "../components/HomeOrnaments";
 import AshWords from "../components/AshWords";
@@ -102,7 +102,7 @@ export default function Home() {
   <button id="rain-toggle" className="rain-toggle" data-audio-control="true" type="button" aria-pressed="true" aria-label="Mute rain ambience">Rain · on</button>
   <audio id="rain-audio" src="/assets/rain.mp3" preload="auto" loop></audio>
   <audio id="soundtrack" src="/assets/sky-after-rain.mp3" preload="auto" autoPlay playsInline loop></audio>
-  <ClothWindFilter />
+  <SingingMotionFilter />
 
 
     </>
