@@ -1,3 +1,4 @@
+import ClothWindFilter from "../components/ClothWindFilter";
 import MusicCredits from "../components/MusicCredits";
 import HomeOrnaments from "../components/HomeOrnaments";
 import AshWords from "../components/AshWords";
@@ -22,21 +23,18 @@ export default function Home() {
         <div className="mist mist-back" data-depth="0.45"></div>
         <div className="character-position" data-depth="1.2">
           <div className="character">
-            <div className="character-state resting-pose">
+            <div className="character-state resting-pose" data-character-pose="resting">
               <img className="character-body" src="/assets/calamitas.png" alt="" fetchPriority="high" />
-              <img className="character-cloak" src="/assets/calamitas.png" alt="" />
               <BlinkEyes pose="resting" />
             </div>
-            <div className="character-state singing-pose">
+            <div className="character-state singing-pose" data-character-pose="singing" hidden>
               <img className="character-body" src="/assets/calamitas-singing.png" alt="" />
-              <img className="character-cloak" src="/assets/calamitas-singing.png" alt="" />
               <BlinkEyes pose="singing" />
               <span className="mouth-cover"></span><div className="mouth"></div>
               <span className="tear tear-left"></span><span className="tear tear-right"></span>
             </div>
-            <div className="character-state aftermath-pose">
+            <div className="character-state aftermath-pose" data-character-pose="aftermath" hidden>
               <img className="character-body" src="/assets/calamitas-aftermath.png" alt="" />
-              <img className="character-cloak" src="/assets/calamitas-aftermath.png" alt="" />
               <BlinkEyes pose="aftermath" />
             </div>
           </div>
@@ -100,7 +98,7 @@ export default function Home() {
   <button id="rain-toggle" className="rain-toggle" data-audio-control="true" type="button" aria-pressed="true" aria-label="Mute rain ambience">Rain · on</button>
   <audio id="rain-audio" src="/assets/rain.mp3" preload="auto" loop></audio>
   <audio id="soundtrack" src="/assets/sky-after-rain.mp3" preload="auto" autoPlay playsInline loop></audio>
-  <svg className="filters" aria-hidden="true"><defs><filter id="cloth-wind" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.009 0.012" numOctaves="1" seed="5"><animate attributeName="baseFrequency" dur="9s" values="0.009 0.012;0.012 0.008;0.009 0.012" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" scale="4" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg>
+  <ClothWindFilter />
 
     </>
   );

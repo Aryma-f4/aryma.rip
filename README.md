@@ -91,3 +91,5 @@ Both page footers display the complete soundtrack credits and source links, with
 - **Rain ambience** — synthesized and filtered locally for this site; separate from both original songs.
 
 The attribution is maintained in `components/MusicCredits.jsx`.
+
+Calamitas renders one image per pose. `lib/pose-render.mjs` swaps the visible pose atomically so resting, singing and aftermath never crossfade over each other. `ClothWindFilter.jsx` applies wind to a single image using a displacement map that fades from a neutral face region into the cloak; no duplicate character layer is used.
