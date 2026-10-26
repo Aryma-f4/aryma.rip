@@ -22,9 +22,9 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${serif.variable} ${sans.variable}`}>
       <head>
         <link rel="preload" href="/assets/night.png" as="image" />
-        <link rel="preload" href="/assets/calamitas.png" as="image" />
-        <link rel="preload" href="/assets/calamitas-singing.png" as="image" />
-        <link rel="preload" href="/assets/calamitas-aftermath.png" as="image" />
+        <link rel="preload" href="/assets/calamitas-v2.png" as="image" />
+        <link rel="preload" href="/assets/calamitas-singing-v2.png" as="image" />
+        <link rel="preload" href="/assets/calamitas-aftermath-v2.png" as="image" />
       </head>
       <body>{children}</body>
     </html>

@@ -24,17 +24,17 @@ export default function Home() {
         <div className="character-position" data-depth="1.2">
           <div className="character">
             <div className="character-state resting-pose" data-character-pose="resting">
-              <img className="character-body" src="/assets/calamitas.png" alt="" fetchPriority="high" />
+              <img className="character-body" src="/assets/calamitas-v2.png" alt="" fetchPriority="high" />
               <BlinkEyes pose="resting" />
             </div>
             <div className="character-state singing-pose" data-character-pose="singing" hidden>
-              <img className="character-body" src="/assets/calamitas-singing.png" alt="" />
+              <img className="character-body" src="/assets/calamitas-singing-v2.png" alt="" />
               <BlinkEyes pose="singing" />
               <span className="mouth-cover"></span><div className="mouth"></div>
               <span className="tear tear-left"></span><span className="tear tear-right"></span>
             </div>
             <div className="character-state aftermath-pose" data-character-pose="aftermath" hidden>
-              <img className="character-body" src="/assets/calamitas-aftermath.png" alt="" />
+              <img className="character-body" src="/assets/calamitas-aftermath-v2.png" alt="" />
               <BlinkEyes pose="aftermath" />
             </div>
           </div>
