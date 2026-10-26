@@ -28,7 +28,7 @@ export default function Home() {
               <BlinkEyes pose="resting" />
             </div>
             <div className="character-state transition-pose" data-character-pose="transition" data-eyes="singing" hidden>
-              <img className="character-body" src="/assets/calamitas-arm-release.png" alt="" />
+              <img className="character-body" src="/assets/calamitas-arm-prepare.png" alt="" />
               <BlinkEyes pose="singing" />
               <BlinkEyes pose="aftermath" />
             </div>

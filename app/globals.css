@@ -113,3 +113,5 @@
 @media(prefers-reduced-motion:reduce){.character{transform:none}.resting-pose,.transition-pose,.singing-pose,.aftermath-pose{filter:none}}
 
 .transition-pose .blink-aftermath{display:none}.transition-pose[data-eyes="aftermath"] .blink-singing{display:none}.transition-pose[data-eyes="aftermath"] .blink-aftermath{display:block}
+
+.transition-pose[data-eyes="none"] .blink-eyes{display:none}
