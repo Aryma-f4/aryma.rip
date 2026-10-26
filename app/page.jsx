@@ -27,6 +27,10 @@ export default function Home() {
               <img className="character-body" src="/assets/calamitas-v2.png" alt="" fetchPriority="high" />
               <BlinkEyes pose="resting" />
             </div>
+            <div className="character-state transition-pose" data-character-pose="transition" hidden>
+              <img className="character-body" src="/assets/calamitas-arm-half.png" alt="" />
+              <BlinkEyes pose="singing" />
+            </div>
             <div className="character-state singing-pose" data-character-pose="singing" hidden>
               <img className="character-body" src="/assets/calamitas-singing-v2.png" alt="" />
               <BlinkEyes pose="singing" />
@@ -99,6 +103,7 @@ export default function Home() {
   <audio id="rain-audio" src="/assets/rain.mp3" preload="auto" loop></audio>
   <audio id="soundtrack" src="/assets/sky-after-rain.mp3" preload="auto" autoPlay playsInline loop></audio>
   <ClothWindFilter />
+
 
     </>
   );

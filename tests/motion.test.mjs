@@ -35,9 +35,9 @@ test('character moves from resting to singing to a quiet crying aftermath',()=>{
  const passages=[{start:108.5,end:148.52},{start:149.78,end:181.1}];
  assert.equal(helpers.characterPose(0,false,passages,false),'resting');
  assert.equal(helpers.characterPose(110,true,passages,false),'singing');
- assert.equal(helpers.characterPose(148.8,true,passages,false),'aftermath');
+ assert.equal(helpers.characterPose(148.8,true,passages,false),'singing');
  assert.equal(helpers.characterPose(160,true,passages,false),'singing');
- assert.equal(helpers.characterPose(181.1,true,passages,false),'aftermath');
+ assert.equal(helpers.characterPose(181.1,true,passages,false),'transition');
  assert.equal(helpers.characterPose(183,false,passages,false),'aftermath');
 });
 test('aftermath lingers through a new instrumental loop and resets on explicit restart',()=>{
@@ -47,4 +47,14 @@ test('aftermath lingers through a new instrumental loop and resets on explicit r
  assert.equal(helpers.characterPose(70,false,passages,true),'aftermath');
  assert.equal(helpers.characterPose(110,true,passages,true),'singing');
  assert.equal(helpers.characterPose(0,false,passages,false),'resting');
+});
+
+test('a half-raised drawing anticipates vocals and lowers the arm before the aftermath',()=>{
+ const passages=[{start:108.5,end:148.52},{start:149.78,end:181.1}];
+ assert.equal(helpers.characterPose(107.8,true,passages,false),'resting');
+ assert.equal(helpers.characterPose(108,true,passages,false),'transition');
+ assert.equal(helpers.characterPose(108.5,true,passages,false),'singing');
+ assert.equal(helpers.characterPose(120,false,passages,false),'singing');
+ assert.equal(helpers.characterPose(181.3,true,passages,true),'transition');
+ assert.equal(helpers.characterPose(181.7,true,passages,true),'aftermath');
 });

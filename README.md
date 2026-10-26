@@ -1,6 +1,6 @@
 # aryma.rip
 
-A cinematic personal website built with **Next.js App Router and React**, ready to import into Vercel. English poetry, a layered Calamity-inspired night scene, rain, fireflies, and a song-driven three-pose character.
+A cinematic personal website built with **Next.js App Router and React**, ready to import into Vercel. English poetry, a layered Calamity-inspired night scene, rain, fireflies, and a song-driven frame-by-frame character.
 
 ## Local development
 
@@ -93,3 +93,11 @@ Both page footers display the complete soundtrack credits and source links, with
 The attribution is maintained in `components/MusicCredits.jsx`.
 
 Calamitas renders one image per pose. `lib/pose-render.mjs` swaps the visible pose atomically so resting, singing and aftermath never crossfade over each other. `ClothWindFilter.jsx` applies wind to a single image using a displacement map that fades from a neutral face region into the cloak; no duplicate character layer is used.
+
+## Character performance
+
+The actor uses seven separate drawings: resting, inhale, half-raised arm, nearly-raised arm, singing reach, singing accent and quiet aftermath. All frames are inspected against the corrected two-leg/two-boot design. `lib/performance.mjs` holds body drawings and seat motion at 12 fps; body/hand poses do not crossfade or use localized deformation. Mouth motion remains independently smoothed from the vocal envelope.
+
+The arm rises through two in-between drawings during the 0.6 seconds before vocals. Short gaps between vocal passages keep it raised. After the final passage it lowers through the drawings in reverse over 0.5 seconds, then settles into the crying aftermath. Pausing or seeking retains the drawing appropriate to the selected timestamp. Lyrics still clear in instrumental gaps.
+
+Frames preload off-DOM and only decoded frames are swapped into the one visible image, preventing blank flashes and overlapping anatomy. The idle inhale loop runs before playback starts. Reduced motion disables continuous movement. The existing hero frame loop suspends offscreen/in hidden tabs and resets seat motion on unmount.

@@ -30,3 +30,7 @@ The second route shares the simple anime illustration language of Calamitas. Sep
 ## Two-leg anatomy and matched boots correction
 
 The three v2 Calamitas sprites remove the erroneous diagonal third shin from the original artwork. Each now has exactly two legs and two boots. The resting sprite's simplified charcoal-brown boots serve as the design reference for the singing and aftermath variants: single tidy folded cuffs, low heels and softly pointed toes. Edits preserve the simple cel-shaded style, transparent background, face placement and upper-body expressions. Versioned asset URLs prevent stale originals from remaining in browser cache.
+
+## Limited animation frames
+
+Four additional registered transparent drawings extend the corrected v2 sprites: `calamitas-idle-inhale.png`, `calamitas-arm-half.png`, `calamitas-arm-high.png`, `calamitas-singing-accent.png`. The arm path rises toward the upper right in two stages and reverses after vocals. Selected frames retain two legs, two boots, natural wrists and five fingers per visible open hand. Rejected hand variants are not used. The body uses held drawings rather than crossfades or deforming anatomy; the separate mouth remains smooth.

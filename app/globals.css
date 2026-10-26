@@ -35,7 +35,7 @@
 @media(max-width:600px){.character-position{height:42%;right:5%;bottom:10%}.hill{height:32%}}
 @media(prefers-reduced-motion:reduce){.character-position,.hill{transform:none}.character{animation:none}}
 /* Phrase-led singing: soft lip shapes and a restrained lean about the seated hips. */
-.singing-pose{transform-origin:48% 58%;transform:rotate(calc(var(--voice,0)*-.4deg));will-change:transform}
+
 .singing-pose .mouth{overflow:hidden;transform:rotate(-14deg) scaleX(var(--mouth-width,1)) scaleY(calc(.055 + var(--mouth,0)));background:linear-gradient(#572c32 30%,#80434a);border-color:#653a37;box-shadow:none;transition:none}
 .singing-pose .mouth::before{content:'';position:absolute;top:0;left:18%;right:15%;height:12%;background:#ebd4bd;border-radius:0 0 60% 45%}
 .singing-pose .mouth::after{content:'';position:absolute;bottom:-10%;left:20%;right:10%;height:40%;background:#c17b75;border-radius:60% 70% 0 0}
@@ -106,3 +106,8 @@
 @media(max-width:600px){.music-credit-grid{grid-template-columns:1fr;gap:28px;margin-top:25px}.music-credits h3{font-size:20px}.music-credits .credit-context{font-size:6px}.credit-context>span{margin-left:8px}.music-credits .rain-credit{font-size:8px}}
 
 @media(prefers-reduced-motion:reduce){.character-body{filter:none}}
+
+/* Held drawings and stepped seat motion; lips are animated separately. */
+.character{animation:none;transform-origin:48% 58%;transform:rotate(calc(var(--life-lean,0)*1deg)) scaleY(var(--life-stretch,1))}
+
+@media(prefers-reduced-motion:reduce){.character{transform:none}.resting-pose,.transition-pose,.singing-pose,.aftermath-pose{filter:none}}
