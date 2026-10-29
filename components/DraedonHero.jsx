@@ -12,9 +12,10 @@ export default function DraedonHero() {
       clearInterval(timer);
       if (motion.matches) return;
       animation = animate(actor.current, {
-        y: [4, -8],
-        rotate: [-0.25, 0.25],
-        duration: 3900,
+        x: [-3, 3],
+        y: [8, -14],
+        rotate: [-0.9, 0.7],
+        duration: 2700,
         alternate: true,
         loop: true,
         ease: "inOutSine",
@@ -45,6 +46,7 @@ export default function DraedonHero() {
         <i />
         <span className="orbit-coordinate">23° 41′ / NO KNOWN HEAVEN</span>
       </div>
+      <div className="draedon-hover-shadow" aria-hidden="true" />
       <div className="draedon-hero-actor" ref={actor}>
         <div className="draedon-thruster" aria-hidden="true" />
         <img
@@ -54,13 +56,13 @@ export default function DraedonHero() {
           height="1024"
           fetchPriority="high"
         />
-      </div>
-      <div className="draedon-hologram" aria-hidden="true">
-        <span>OBSERVATION // 001</span>
-        <svg viewBox="0 0 160 60">
-          <path d="M0 42H24L31 34l8 14 11-27 10 35 13-45 14 31h30l8-12 12 12h23" />
-        </svg>
-        <span>THE MACHINE IS LISTENING</span>
+        <div className="draedon-hologram" aria-hidden="true">
+          <span>OBSERVATION // 001</span>
+          <svg viewBox="0 0 160 60">
+            <path d="M0 42H24L31 34l8 14 11-27 10 35 13-45 14 31h30l8-12 12 12h23" />
+          </svg>
+          <span>THE MACHINE IS LISTENING</span>
+        </div>
       </div>
       <figcaption className="hero-transmission">
         <span className="transmission-led" />

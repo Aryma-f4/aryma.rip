@@ -1902,3 +1902,57 @@
 .lab-exo-display img {
   animation: none;
 }
+
+/* The chair and its console hover as one intact illustration. */
+.draedon-hero-actor {
+  transform-origin: 62% 65%;
+  will-change: transform;
+}
+.draedon-hero .draedon-thruster {
+  background: radial-gradient(
+    ellipse at 50% 0,
+    #a1eee48a,
+    #5fced238 35%,
+    transparent 73%
+  );
+  animation-duration: 1.35s;
+}
+.draedon-hover-shadow {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 55%;
+  height: 7%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #03090db0, transparent 70%);
+  animation: draedon-shadow 2.7s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.draedon-hero .draedon-hologram svg path {
+  stroke-dasharray: 18 5;
+  animation: draedon-console-signal 3s linear infinite;
+}
+@keyframes draedon-shadow {
+  from {
+    opacity: 0.75;
+    transform: scaleX(0.85);
+  }
+  to {
+    opacity: 0.35;
+    transform: scaleX(1.1);
+  }
+}
+@keyframes draedon-console-signal {
+  to {
+    stroke-dashoffset: -46;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .draedon-hover-shadow,
+  .draedon-hero .draedon-hologram svg path {
+    animation: none;
+  }
+  .draedon-hero-actor {
+    will-change: auto;
+  }
+}
