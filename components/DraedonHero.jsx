@@ -3,6 +3,15 @@ import { useEffect, useRef, useState } from "react";
 import { animate } from "animejs";
 export default function DraedonHero() {
   const actor = useRef(null);
+  const [celsReady, setCelsReady] = useState(false);
+  useEffect(() => {
+    const sprite = new Image();
+    sprite.onload = () => setCelsReady(true);
+    sprite.src = "/assets/draedon-console-cels.png";
+    return () => {
+      sprite.onload = null;
+    };
+  }, []);
   const [quote, setQuote] = useState("magnificent");
   useEffect(() => {
     const motion = matchMedia("(prefers-reduced-motion: reduce)");
@@ -47,7 +56,10 @@ export default function DraedonHero() {
         <span className="orbit-coordinate">23° 41′ / NO KNOWN HEAVEN</span>
       </div>
       <div className="draedon-hover-shadow" aria-hidden="true" />
-      <div className="draedon-hero-actor" ref={actor}>
+      <div
+        className={`draedon-hero-actor ${celsReady ? "cels-ready" : ""}`}
+        ref={actor}
+      >
         <div className="draedon-thruster" aria-hidden="true" />
         <img
           src="/assets/draedon-hero.png"
@@ -56,6 +68,9 @@ export default function DraedonHero() {
           height="1024"
           fetchPriority="high"
         />
+        {celsReady && (
+          <div className="draedon-working-cels" aria-hidden="true" />
+        )}
         <div className="draedon-hologram" aria-hidden="true">
           <span>OBSERVATION // 001</span>
           <svg viewBox="0 0 160 60">
