@@ -1524,3 +1524,314 @@
     padding-bottom: 150px;
   }
 }
+
+/* A physical workbench behind the intact, animated Draedon illustration. */
+.arsenal-hero {
+  overflow: hidden;
+}
+.arsenal-hero::before {
+  display: none;
+}
+.draedon-lab {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+  background: #101920;
+}
+.lab-room {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% center;
+  opacity: 0.75;
+}
+.draedon-lab::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      #101920ed 0%,
+      #101920c9 30%,
+      #10192035 65%,
+      #10192032
+    ),
+    linear-gradient(0deg, var(--forge), transparent 30%);
+}
+.lab-live-monitor {
+  position: absolute;
+  top: 5%;
+  right: 25%;
+  width: 25%;
+  height: 28%;
+  padding: 10px;
+  border: 2px solid #527d80;
+  background: #0c2027f5;
+  box-shadow:
+    0 0 0 6px #17252b,
+    0 0 24px #57b4c91c;
+  transform: perspective(800px) rotateY(-5deg);
+  color: #a1c9c9;
+  font-family: monospace;
+  z-index: 1;
+}
+.lab-live-monitor > span {
+  font-size: 7px;
+  letter-spacing: 1.5px;
+}
+.lab-exo-display {
+  position: relative;
+  overflow: hidden;
+  height: calc(100% - 39px);
+  margin: 4px 0;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 3px, #82dfe608 3px 4px),
+    #0b1b22;
+}
+.lab-exo-display img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.72;
+  filter: grayscale(1) sepia(0.4) hue-rotate(125deg) saturate(1.3);
+  animation: exo-assembly 9s linear infinite;
+}
+.lab-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: #9fe4e5;
+  box-shadow: 0 0 14px #8af7ff;
+  animation: lab-scan 4.5s linear infinite;
+}
+.lab-crosshair {
+  position: absolute;
+  inset: 10% 28%;
+  border: 1px solid #9de1e02e;
+  background:
+    linear-gradient(90deg, transparent 49.5%, #9de1e025 50%, transparent 50.5%),
+    linear-gradient(0deg, transparent 49.5%, #9de1e025 50%, transparent 50.5%);
+}
+.lab-build-status {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 6px;
+  letter-spacing: 1px;
+}
+.lab-build-status > i {
+  height: 3px;
+  flex: 1;
+  background: #345256;
+  overflow: hidden;
+}
+.lab-build-status > i::after {
+  content: "";
+  display: block;
+  height: 100%;
+  background: #8cbdbb;
+  animation: lab-progress 9s linear infinite;
+}
+.lab-status {
+  position: absolute;
+  bottom: 13%;
+  right: 6%;
+  font: 7px monospace;
+  letter-spacing: 2px;
+  color: #8badae;
+  z-index: 1;
+}
+.lab-status > i {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: #89c5bf;
+  box-shadow: 0 0 7px #73ccbf;
+  margin-right: 6px;
+  animation: lab-reactor 3s ease-in-out infinite;
+}
+.lab-status > span {
+  display: block;
+  margin-top: 9px;
+  opacity: 0.6;
+}
+.draedon-orbit {
+  opacity: 0.4;
+}
+@keyframes lab-scan {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+  }
+}
+@keyframes lab-progress {
+  from {
+    width: 8%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes exo-assembly {
+  0% {
+    clip-path: inset(100% 0 0);
+  }
+  60%,
+  100% {
+    clip-path: inset(0);
+  }
+}
+@keyframes lab-reactor {
+  50% {
+    opacity: 0.35;
+  }
+}
+.arsenal-player {
+  position: fixed;
+  bottom: 20px;
+  left: 24px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 335px;
+  max-width: calc(100vw - 32px);
+  padding: 12px 15px;
+  background: #101a22f2;
+  border: 1px solid #7ca5a337;
+  box-shadow: 0 5px 22px #0004;
+  backdrop-filter: blur(12px);
+}
+.arsenal-player > button {
+  background: transparent;
+  border: 1px solid #83b6b54a;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  color: #b1ccca;
+  font-size: 12px;
+}
+.arsenal-track-info {
+  flex: 1;
+  min-width: 0;
+}
+.arsenal-track-info > span {
+  font: 8px monospace;
+  letter-spacing: 1px;
+  color: #c4d1cb;
+  display: block;
+}
+.arsenal-track-info i {
+  color: #7f9b95;
+  font-style: normal;
+}
+.is-playing .arsenal-track-info i {
+  color: #9ccdc6;
+  text-shadow: 0 0 7px #65bfc4;
+}
+.arsenal-track-info > small {
+  display: block;
+  font: 6px monospace;
+  color: #8eaaa9;
+  margin-top: 5px;
+  letter-spacing: 0.5px;
+}
+.arsenal-player input {
+  display: block;
+  height: 3px;
+  accent-color: #9dbbb5;
+  cursor: pointer;
+}
+.arsenal-track-info input {
+  width: 100%;
+  margin: 8px 0 0;
+}
+.arsenal-track-time {
+  font: 8px monospace;
+  color: #9ab1ae;
+}
+.arsenal-player .arsenal-volume {
+  width: 42px;
+}
+.arsenal-footer {
+  padding-bottom: 120px;
+}
+.arsenal-footer .signal-credit {
+  display: block;
+  flex-basis: 100%;
+  color: #9aaea9;
+  font-size: 10px;
+  line-height: 1.9;
+}
+.signal-credit > span {
+  font: 7px monospace;
+  letter-spacing: 2px;
+}
+.signal-credit a {
+  display: inline-block;
+  margin-right: 18px;
+  border-bottom: 1px solid #8bb4af33;
+}
+@media (max-width: 700px) {
+  .lab-room {
+    object-position: 63% center;
+    opacity: 0.65;
+  }
+  .draedon-lab::after {
+    background: linear-gradient(
+      180deg,
+      #101920e6 0%,
+      #101920ca 32%,
+      #10192035 55%,
+      var(--forge) 100%
+    );
+  }
+  .lab-live-monitor {
+    top: 40%;
+    right: 43%;
+    width: 49%;
+    height: 18%;
+    padding: 7px;
+  }
+  .lab-live-monitor > span {
+    font-size: 5px;
+    letter-spacing: 1px;
+  }
+  .lab-build-status {
+    font-size: 4px;
+    letter-spacing: 0.2px;
+  }
+  .lab-status {
+    bottom: 8%;
+    right: 7%;
+  }
+  .arsenal-player {
+    bottom: 12px;
+    left: 16px;
+    width: calc(100vw - 32px);
+  }
+  .arsenal-world .draedon-companion {
+    bottom: 105px;
+  }
+  .arsenal-reader ~ .arsenal-footer {
+    padding-bottom: 245px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lab-scan,
+  .lab-exo-display img,
+  .lab-build-status > i::after,
+  .lab-status > i {
+    animation: none;
+  }
+  .lab-build-status > i::after {
+    width: 100%;
+  }
+}

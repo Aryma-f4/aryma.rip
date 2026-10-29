@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   getJournalEntries,
@@ -34,9 +35,9 @@ export default async function Post({ params }) {
     <>
       <ArsenalHeader detail />
       <main className="arsenal-reader journal-article">
-        <a className="arsenal-breadcrumb" href="/arsenal/blog/">
+        <Link className="arsenal-breadcrumb" href="/arsenal/blog/">
           ← THE JOURNAL
-        </a>
+        </Link>
         <header className="journal-article-header">
           <p className="arsenal-kicker">
             {post.kind.toUpperCase()} / {post.date} / {post.minutes} MIN READ
@@ -50,7 +51,7 @@ export default async function Post({ params }) {
         <MarkdownContent source={post.content} />
         <div className="article-end">
           <span>✧</span>
-          <a href="/arsenal/blog/">Back to the journal →</a>
+          <Link href="/arsenal/blog/">Back to the journal →</Link>
         </div>
       </main>
       <DraedonCompanion />

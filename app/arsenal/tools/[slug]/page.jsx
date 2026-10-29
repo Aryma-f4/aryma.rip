@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tools, toolBySlug } from "../../../../lib/arsenal.mjs";
 import DraedonCompanion from "../../../../components/DraedonCompanion";
@@ -23,9 +24,9 @@ export default async function ToolPage({ params }) {
     <>
       <ArsenalHeader detail />
       <main className="arsenal-reader">
-        <a className="arsenal-breadcrumb" href="/arsenal/">
+        <Link className="arsenal-breadcrumb" href="/arsenal/">
           THE ARSENAL <span>/</span> TOOLS <span>/</span> {tool.name}
-        </a>
+        </Link>
         <header className="tool-detail-hero">
           <p className="arsenal-kicker">
             INSTRUMENT {tool.number} / {tool.language.toUpperCase()}
@@ -66,9 +67,9 @@ export default async function ToolPage({ params }) {
               .
             </p>
           </section>
-          <a href="/arsenal/" className="arsenal-text-link">
+          <Link href="/arsenal/" className="arsenal-text-link">
             ← Return to the workbench
-          </a>
+          </Link>
         </div>
       </main>
       <DraedonCompanion />

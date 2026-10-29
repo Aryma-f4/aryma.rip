@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { getJournalEntries } from "../../../lib/journal.mjs";
 import DraedonCompanion from "../../../components/DraedonCompanion";
 import {
@@ -28,14 +29,14 @@ export default async function Blog() {
         {entries.length ? (
           <div className="journal-list">
             {entries.map((post) => (
-              <a href={`/arsenal/blog/${post.slug}/`} key={post.slug}>
+              <Link href={`/arsenal/blog/${post.slug}/`} key={post.slug}>
                 <span>
                   {post.kind.toUpperCase()} / {post.date} / {post.minutes} MIN
                   READ
                 </span>
                 <h2>{post.title} ↗</h2>
                 <p>{post.excerpt}</p>
-              </a>
+              </Link>
             ))}
           </div>
         ) : (

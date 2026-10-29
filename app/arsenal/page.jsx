@@ -1,3 +1,5 @@
+import Link from "next/link";
+import DraedonLab from "../../components/DraedonLab";
 import DraedonHero from "../../components/DraedonHero";
 import {
   ArsenalHeader,
@@ -19,8 +21,7 @@ export default async function Arsenal() {
       <ArsenalHeader />
       <main>
         <section className="arsenal-hero" aria-labelledby="arsenal-title">
-          <div className="arsenal-stars" aria-hidden="true" />
-          <div className="arsenal-storm" aria-hidden="true" />
+          <DraedonLab />
           <div className="arsenal-hero-copy">
             <p className="arsenal-kicker">III / THE WORKBENCH AFTER THE END</p>
             <h1 id="arsenal-title">
@@ -67,7 +68,7 @@ export default async function Arsenal() {
           </div>
           <div className="arsenal-tools">
             {tools.map((tool) => (
-              <a
+              <Link
                 className="arsenal-tool"
                 href={`/arsenal/tools/${tool.slug}/`}
                 key={tool.slug}
@@ -87,7 +88,7 @@ export default async function Arsenal() {
                 <span className="arsenal-tool-arrow" aria-label="Open project">
                   ↗
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
         </section>
@@ -110,9 +111,9 @@ export default async function Arsenal() {
               <br />
               to be written before they could be understood.
             </p>
-            <a href="/arsenal/blog/" className="arsenal-text-link">
+            <Link href="/arsenal/blog/" className="arsenal-text-link">
               Enter the journal <span>↗</span>
-            </a>
+            </Link>
           </div>
           <span className="journal-gate-count">
             {String(entries.length).padStart(2, "0")}
@@ -141,11 +142,11 @@ export default async function Arsenal() {
           {ideas.length ? (
             <div className="journal-list">
               {ideas.map((post) => (
-                <a href={`/arsenal/blog/${post.slug}/`} key={post.slug}>
+                <Link href={`/arsenal/blog/${post.slug}/`} key={post.slug}>
                   <span>IDEA / {post.date}</span>
                   <h3>{post.title} ↗</h3>
                   <p>{post.excerpt}</p>
-                </a>
+                </Link>
               ))}
             </div>
           ) : (

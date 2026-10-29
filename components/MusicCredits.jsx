@@ -24,3 +24,7 @@ export default function MusicCredits({ current }) {
     </div>
   </details>;
 }
+
+export function SignalMusicCredit() {
+  return <div className="signal-credit"><span>MUSIC / THE ARSENAL</span><p>Signal Received — <strong>CDMusic</strong><br />Theme of Draedon (Pre-Fight) · Calamity Mod</p><a href="https://soundcloud.com/charliedebnammusic/signal-received" target="_blank" rel="noopener noreferrer">Original artist recording ↗</a><a href="https://cdmusic-uk.bandcamp.com/track/signal-received" target="_blank" rel="noopener noreferrer">Bandcamp ↗</a></div>;
+}

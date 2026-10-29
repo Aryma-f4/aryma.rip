@@ -1,3 +1,5 @@
+import { SignalMusicCredit } from "./MusicCredits";
+import Link from "next/link";
 export function ArsenalHeader({ detail = false }) {
   return (
     <header className="arsenal-header">
@@ -6,9 +8,12 @@ export function ArsenalHeader({ detail = false }) {
       </a>
       <span className="arsenal-header-rule" />
       <span className="arsenal-header-note">the things left unfinished</span>
-      <a className="arsenal-back" href={detail ? "/arsenal/" : "/trace-of-me/"}>
+      <Link
+        className="arsenal-back"
+        href={detail ? "/arsenal/" : "/trace-of-me/"}
+      >
         {detail ? "← THE ARSENAL" : "A TRACE OF ME ↗"}
-      </a>
+      </Link>
     </header>
   );
 }
@@ -18,10 +23,11 @@ export function ArsenalFooter() {
       <a href="/">aryma.rip</a>
       <p>BUILT IN THE HOURS THAT STILL BELONG TO ME.</p>
       <div>
-        <a href="/arsenal/">The arsenal</a>
-        <a href="/arsenal/blog/">The journal</a>
+        <Link href="/arsenal/">The arsenal</Link>
+        <Link href="/arsenal/blog/">The journal</Link>
         <a href="/">After the rain ↗</a>
       </div>
+      <SignalMusicCredit />
       <small>
         A personal Calamity tribute. Draedon pixel animation supplied by Aryma;
         hero illustration made for this site.

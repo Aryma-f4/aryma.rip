@@ -1,3 +1,4 @@
+import ArsenalSoundtrack from "../../components/ArsenalSoundtrack";
 import "./arsenal.css";
 export const metadata = {
   title: "The Arsenal — aryma.rip",
@@ -5,5 +6,10 @@ export const metadata = {
     "Tools, field notes and unfinished ideas from Aryma’s workbench.",
 };
 export default function ArsenalLayout({ children }) {
-  return <div className="arsenal-world">{children}</div>;
+  return (
+    <div className="arsenal-world">
+      {children}
+      <ArsenalSoundtrack />
+    </div>
+  );
 }

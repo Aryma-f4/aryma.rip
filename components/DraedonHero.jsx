@@ -12,9 +12,9 @@ export default function DraedonHero() {
       clearInterval(timer);
       if (motion.matches) return;
       animation = animate(actor.current, {
-        y: [3, -5],
+        y: [4, -8],
         rotate: [-0.25, 0.25],
-        duration: 4400,
+        duration: 3900,
         alternate: true,
         loop: true,
         ease: "inOutSine",
