@@ -105,3 +105,11 @@ Raising uses twelve silhouettes over 0.8 seconds; lowering uses twelve over 1.2 
 `lib/character-lighting.mjs` records measured opaque skin midtones for all active cels and calibrates them to the resting image with small RGB gains. `CharacterLighting.jsx` preserves the original alpha and shading through color transfer only. The correction is applied to the full visible pose, including mouth and blink overlays. Each image and its matching light filter update together; desktop/mobile use the same ambient brightness. Original PNGs are unchanged.
 
 Pause, resume and seeks retain soundtrack synchronization. Reduced motion, hidden tabs, leaving the viewport and route cleanup stop Anime.js instances. Decoded-image preloading protects pose swaps; exactly one complete character remains visible.
+
+## The Arsenal and Markdown journal
+
+`/arsenal/` collects Gulpsuite, WorldShellFinder, the journal entrance and published ideas. `/arsenal/tools/[slug]/` contains the two project detail pages; edit `lib/arsenal.mjs` for their descriptions and links. Quiet footer links connect the new route to home and Trace of Me.
+
+Write articles as Markdown in `content/journal/`. Start from the ignored draft `_template.md`; see `content/journal/README.md` for frontmatter, images, supported code formatting, drafts and publishing. The blog starts empty. `react-markdown`, GFM and `rehype-highlight` render safe non-executable Markdown; Prettier formats supported embedded code before the article is statically built. Code blocks support copying. No CMS credentials or client-side content storage are needed.
+
+The generated seated Draedon hero is `public/assets/draedon-hero.png`, animated as one intact cel with Anime.js and separate CSS cyan ambience. `public/assets/draedon-companion.gif` is the user's unchanged 12-frame GIF. The floating companion is mounted only in tool details and blog routes, never in the Arsenal index or older pages. It follows page progress with bounded Anime.js motion and changes between the requested two phrases. It can be hidden; reduced motion shows the still hero image and disables following.

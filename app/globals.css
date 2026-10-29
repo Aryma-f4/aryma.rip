@@ -115,3 +115,5 @@
 .transition-pose .blink-aftermath{display:none}.transition-pose[data-eyes="aftermath"] .blink-singing{display:none}.transition-pose[data-eyes="aftermath"] .blink-aftermath{display:block}
 
 .transition-pose[data-eyes="none"] .blink-eyes{display:none}
+/* Keep both quiet footer entrances at the existing small type size. */
+footer:not(.arsenal-footer)>a:not(.footer-brand){font-size:10px}footer:not(.arsenal-footer)>a:not(.footer-brand)>span{margin-left:8px;color:var(--gold)}

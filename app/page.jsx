@@ -11,6 +11,10 @@ import SceneController from "../components/SceneController";
 export default function Home() {
   return (
     <>
+<link rel="preload" href="/assets/night.png" as="image" />
+        <link rel="preload" href="/assets/calamitas-v2.png" as="image" />
+        <link rel="preload" href="/assets/calamitas-singing-v2.png" as="image" />
+        <link rel="preload" href="/assets/calamitas-aftermath-v2.png" as="image" />
       <SceneController />
       <TextAtmosphere />
       <BlinkController selector=".character" />
@@ -92,7 +96,7 @@ export default function Home() {
     </section>
   </main>
 
-  <footer><a className="footer-brand" href="#">aryma.rip</a><span>STILL HUMAN. STILL HERE.</span><a href="/trace-of-me/">A trace of me <span aria-hidden="true">↗</span></a><MusicCredits current="sky" /><small>A personal tribute to Terraria Calamity. Poetry is original.</small></footer>
+  <footer><a className="footer-brand" href="#">aryma.rip</a><span>STILL HUMAN. STILL HERE.</span><a href="/trace-of-me/">A trace of me <span aria-hidden="true">↗</span></a><a href="/arsenal/">The arsenal <span>↗</span></a><MusicCredits current="sky" /><small>A personal tribute to Terraria Calamity. Poetry is original.</small></footer>
 
   <aside className="music-player" data-audio-control="true" aria-label="Soundtrack controls">
     <button id="audio-toggle" className="audio-toggle" type="button" aria-label="Play soundtrack" aria-pressed="false"><span className="sound-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span></button>
