@@ -1835,3 +1835,70 @@
     width: 100%;
   }
 }
+
+/* Leave the assembly bay visible around the smaller foreground engineer. */
+.arsenal-hero .draedon-hero {
+  width: 56%;
+  max-width: 300px;
+  min-height: 0;
+  align-self: end;
+  justify-self: end;
+  margin-bottom: -55px;
+}
+.lab-live-monitor {
+  top: 61%;
+  right: 30%;
+  width: 22%;
+  height: 25%;
+}
+@media (max-width: 1000px) and (min-width: 701px) {
+  .arsenal-hero .draedon-hero {
+    width: 70%;
+    max-width: 280px;
+  }
+  .lab-live-monitor {
+    right: 33%;
+    width: 22%;
+  }
+}
+@media (max-width: 700px) {
+  .arsenal-hero .draedon-hero {
+    width: 64%;
+    max-width: 240px;
+    justify-self: end;
+    margin-bottom: 0;
+  }
+  .lab-room {
+    position: absolute;
+    width: 170%;
+    max-width: none;
+    height: auto;
+    left: -68%;
+    top: 35%;
+    object-fit: contain;
+    opacity: 0.85;
+  }
+  .lab-live-monitor {
+    top: 71%;
+    right: 59%;
+    width: 32%;
+    height: 15%;
+    padding: 5px;
+  }
+  .lab-live-monitor > span {
+    font-size: 4px;
+    letter-spacing: 0.2px;
+  }
+  .lab-build-status {
+    font-size: 3px;
+    gap: 3px;
+  }
+  .lab-status {
+    bottom: 6%;
+  }
+}
+
+/* Every Exo Mech remains visible while the Ares diagnostic sweep runs. */
+.lab-exo-display img {
+  animation: none;
+}

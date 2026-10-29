@@ -3,14 +3,14 @@ export default function DraedonLab() {
     <div className="draedon-lab" aria-hidden="true">
       <img
         className="lab-room"
-        src="/assets/draedon-lab.png"
+        src="/assets/draedon-lab-exo-monitors.png"
         alt=""
         width="1672"
         height="941"
         fetchPriority="high"
       />
       <div className="lab-live-monitor">
-        <span>EXO / ASSEMBLY SEQUENCE</span>
+        <span>ARES / ASSEMBLY SEQUENCE</span>
         <div className="lab-exo-display">
           <img src="/assets/trace-exo.png" alt="" width="1536" height="1024" />
           <i className="lab-scan" />
