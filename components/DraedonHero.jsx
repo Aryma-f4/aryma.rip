@@ -21,10 +21,10 @@ export default function DraedonHero() {
       clearInterval(timer);
       if (motion.matches) return;
       animation = animate(actor.current, {
-        x: [-3, 3],
-        y: [8, -14],
-        rotate: [-0.9, 0.7],
-        duration: 2700,
+        x: [-0.4, 0.4],
+        y: [1.5, -2],
+        rotate: [-0.12, 0.12],
+        duration: 5200,
         alternate: true,
         loop: true,
         ease: "inOutSine",
@@ -81,7 +81,7 @@ export default function DraedonHero() {
       </div>
       <figcaption className="hero-transmission">
         <span className="transmission-led" />
-        <span>INCOMING TRANSMISSION</span>
+        <span>DRAEDON / TRANSMISSION</span>
         <q key={quote}>{quote}</q>
       </figcaption>
     </figure>

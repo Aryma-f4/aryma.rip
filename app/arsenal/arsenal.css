@@ -2144,3 +2144,153 @@
     background-position: 0 0;
   }
 }
+
+/* Independent tracking gestures replace the shared repeating body tween. */
+.mech-drawing {
+  animation: none;
+}
+.lab-monitor-bank {
+  top: 10%;
+  height: 43%;
+}
+.mech-thanatos .lab-scan {
+  animation-duration: 7.3s;
+  animation-delay: -2s;
+}
+.mech-ares .lab-scan {
+  animation-duration: 5.7s;
+  animation-delay: -3.1s;
+  animation-direction: reverse;
+}
+.mech-artemis .lab-scan {
+  animation-duration: 8.9s;
+  animation-delay: -5s;
+  animation-direction: alternate;
+}
+.mech-apollo .lab-scan {
+  animation-duration: 6.7s;
+  animation-delay: -1.5s;
+  animation-direction: alternate-reverse;
+}
+.mech-thanatos .mech-reactor-pulse {
+  animation-duration: 4.1s;
+  animation-delay: -1.3s;
+}
+.mech-ares .mech-reactor-pulse {
+  animation-duration: 3.3s;
+  animation-delay: -2s;
+}
+.mech-artemis .mech-reactor-pulse {
+  animation-duration: 5.3s;
+  animation-delay: -0.7s;
+}
+.mech-apollo .mech-reactor-pulse {
+  animation-duration: 4.7s;
+  animation-delay: -3s;
+}
+.mech-thanatos .lab-build-status > i::after {
+  animation-duration: 13s;
+}
+.mech-ares .lab-build-status > i::after {
+  animation-duration: 17s;
+  animation-delay: -4s;
+}
+.mech-artemis .lab-build-status > i::after {
+  animation-duration: 11s;
+  animation-delay: -7s;
+}
+.mech-apollo .lab-build-status > i::after {
+  animation-duration: 19s;
+  animation-delay: -2s;
+}
+.draedon-hover-shadow {
+  animation-duration: 5.2s;
+}
+@keyframes draedon-shadow {
+  from {
+    opacity: 0.55;
+    transform: scaleX(0.97);
+  }
+  to {
+    opacity: 0.45;
+    transform: scaleX(1.02);
+  }
+}
+.draedon-hero .hero-transmission {
+  position: absolute;
+  top: 8%;
+  left: -20%;
+  bottom: auto;
+  right: auto;
+  width: 174px;
+  min-height: 0;
+  padding: 12px 14px;
+  display: grid;
+  grid-template-columns: 4px 1fr;
+  gap: 8px;
+  align-items: center;
+  z-index: 8;
+  background: #102029f5;
+  border: 1px solid #84aaa66b;
+  box-shadow: 0 6px 20px #050d1845;
+}
+.draedon-hero .hero-transmission::after {
+  content: "";
+  position: absolute;
+  right: -12px;
+  top: 63%;
+  width: 20px;
+  height: 1px;
+  background: #84aaa6;
+  transform: rotate(32deg);
+  transform-origin: left;
+}
+.draedon-hero .hero-transmission > span:nth-child(2) {
+  font-size: 5px;
+  letter-spacing: 1px;
+}
+.draedon-hero .hero-transmission q {
+  grid-column: 1/-1;
+  font-size: 19px;
+  line-height: 1.15;
+  margin: 0;
+  white-space: nowrap;
+  color: #d3d4c8;
+}
+@media (max-width: 1000px) and (min-width: 701px) {
+  .draedon-hero .hero-transmission {
+    width: 153px;
+    left: -24%;
+  }
+  .draedon-hero .hero-transmission q {
+    font-size: 17px;
+  }
+}
+@media (max-width: 700px) {
+  .lab-monitor-bank {
+    top: 39%;
+    height: 28%;
+  }
+  .draedon-hero .hero-transmission {
+    top: 12%;
+    left: -49%;
+    width: 151px;
+    padding: 10px 11px;
+    gap: 7px;
+  }
+  .draedon-hero .hero-transmission q {
+    font-size: 17px;
+  }
+}
+
+/* Animate an HTML carrier so SVG x/y attributes cannot absorb translation. */
+.mech-motion {
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mech-motion {
+    transform: none !important;
+  }
+}

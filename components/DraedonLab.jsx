@@ -1,3 +1,7 @@
+"use client";
+import { useEffect, useRef } from "react";
+import { animate } from "animejs";
+import { startMechMotion } from "../lib/mech-motion.mjs";
 const mechs = [
   {
     name: "Thanatos",
@@ -26,6 +30,26 @@ const mechs = [
   },
 ];
 export default function DraedonLab() {
+  const bank = useRef(null);
+  useEffect(() => {
+    const preference = matchMedia("(prefers-reduced-motion: reduce)");
+    let stop = () => {};
+    function setup() {
+      stop();
+      stop = preference.matches
+        ? () => {}
+        : startMechMotion(
+            bank.current.querySelectorAll(".mech-motion"),
+            animate,
+          );
+    }
+    setup();
+    preference.addEventListener("change", setup);
+    return () => {
+      stop();
+      preference.removeEventListener("change", setup);
+    };
+  }, []);
   return (
     <div className="draedon-lab" aria-hidden="true">
       <img
@@ -36,10 +60,10 @@ export default function DraedonLab() {
         height="941"
         fetchPriority="high"
       />
-      <div className="lab-monitor-bank">
+      <div className="lab-monitor-bank" ref={bank}>
         {mechs.map((mech) => (
           <div
-            className={`mech-monitor ${mech.wide ? "mech-monitor-wide" : ""}`}
+            className={`mech-monitor mech-${mech.name.toLowerCase()} ${mech.wide ? "mech-monitor-wide" : ""}`}
             key={mech.name}
           >
             <div className="mech-monitor-heading">
@@ -47,18 +71,20 @@ export default function DraedonLab() {
               <span>EXO / {mech.id}</span>
             </div>
             <div className="mech-viewport">
-              <svg
-                className="mech-drawing"
-                viewBox={mech.crop}
-                preserveAspectRatio="xMidYMid meet"
-                focusable="false"
-              >
-                <image
-                  href={mech.source}
-                  width={mech.name === "Ares" ? 1536 : 1672}
-                  height={mech.name === "Ares" ? 1024 : 941}
-                />
-              </svg>
+              <div className="mech-motion" data-mech={mech.name}>
+                <svg
+                  className="mech-drawing"
+                  viewBox={mech.crop}
+                  preserveAspectRatio="xMidYMid meet"
+                  focusable="false"
+                >
+                  <image
+                    href={mech.source}
+                    width={mech.name === "Ares" ? 1536 : 1672}
+                    height={mech.name === "Ares" ? 1024 : 941}
+                  />
+                </svg>
+              </div>
               <i className="lab-scan" />
               <i className="lab-crosshair" />
               <i className="mech-reactor-pulse" />
