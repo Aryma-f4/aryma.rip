@@ -54,11 +54,11 @@ Lyrics were cross-checked with the composer's text; phrase timing is approximate
 
 After vocals, the character lowers her hands and quietly cries. This aftermath lingers through the outro and the next instrumental loop. The next vocal passage returns to the singing pose; explicit seeking before the first passage resets the initial resting pose.
 
-## Tools and certifications
+## Certifications
 
-Edit the entries in `app/trace-of-me/page.jsx`. Current tools are **Gulpsuite** and **WorldShellFinder**. Certifications are **CPENT (EC-Council)**, **CWSE (Hackviser)** and **CAPT (Hackviser)**. Personal names are omitted. Dates and credential links are omitted until supplied.
+Edit the entries in `app/trace-of-me/page.jsx`. The “What I’m working with” section has been removed. Certifications are **CPENT (EC-Council)**, **CWSE (Hackviser)** and **CAPT (Hackviser)**. Personal names are omitted. Dates and credential links are omitted until supplied.
 
-Tools use `li.tool-entry` with a title and short description. Certifications use `li.credential-entry` with an `h3` title and issuer paragraph. Add an external credential link only when a real URL is available, using `target="_blank" rel="noopener noreferrer"`.
+Certifications use `li.credential-entry` with an `h3` title and issuer paragraph. Add an external credential link only when a real URL is available, using `target="_blank" rel="noopener noreferrer"`.
 
 ## Rollback
 
@@ -108,7 +108,7 @@ Pause, resume and seeks retain soundtrack synchronization. Reduced motion, hidde
 
 ## The Arsenal and Markdown journal
 
-The reading path is `/` (rain) → `/trace-of-me/` (ash and personal archive) → `/arsenal/` (the signal, journal and ideas). Prominent story bridges lead forward; return links lead back. Gulpsuite and WorldShellFinder remain only in the Trace of Me archive, linking directly to GitHub; their Arsenal cards and detail routes were removed. The Arsenal music credit includes the supplied YouTube source alongside CDMusic’s artist links.
+The reading path is `/` (rain) → `/trace-of-me/` (ash and personal archive) → `/arsenal/` (the signal, journal and ideas). Prominent story bridges lead forward; return links lead back. Project listings and the “What I’m working with” section have been removed; certifications and published disclosures remain in Trace of Me. The Arsenal music credit includes the supplied YouTube source alongside CDMusic’s artist links.
 
 Write articles as Markdown in `content/journal/`. Start from the ignored draft `_template.md`; see `content/journal/README.md` for frontmatter, images, supported code formatting, drafts and publishing. The blog starts empty. `react-markdown`, GFM and `rehype-highlight` render safe non-executable Markdown; Prettier formats supported embedded code before the article is statically built. Code blocks support copying. No CMS credentials or client-side content storage are needed.
 

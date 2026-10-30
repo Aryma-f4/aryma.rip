@@ -83,31 +83,8 @@ export default function TraceOfMe() {
             <div className="trace-social"><a href="https://github.com/Aryma-f4" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/worldsavior/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
         </div>
       </section>
-    <section className="personal-archive" id="working-with" aria-labelledby="working-title">
-      <div className="section-mark"><span>02</span><span className="rule"></span><span>THE THINGS I REACH FOR</span></div>
-      <div className="archive-layout">
-        <div className="archive-heading">
-          <h2 id="working-title">What I'm<br /><em>working with.</em></h2>
-          <p>Things I keep making<br />when I cannot explain<br />what I am trying to hold on to.</p>
-        </div>
-        <div className="archive-content">
-          {/* Add real tools as <li className="tool-entry"><span>Tool name</span><span>What I use it for</span></li>. */}
-          <ul className="tool-list" aria-label="Tools and technologies">
-            <li className="tool-entry">
-              <span><a href="https://github.com/Aryma-f4/gulpsuite" target="_blank" rel="noopener noreferrer">Gulpsuite ↗</a></span>
-              <span>A free web security toolkit built in Rust, inspired by Burp Suite Pro.</span>
-            </li>
-            <li className="tool-entry">
-              <span><a href="https://github.com/Aryma-f4/worldshellfinder" target="_blank" rel="noopener noreferrer" aria-label="WorldShellFinder on GitHub">WorldShellFinder <span className="entry-arrow" aria-hidden="true">↗</span></a></span>
-              <span>A Go-based web shell detection tool using keywords, regex rules, and heuristic scoring.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <section className="personal-archive certification-archive" id="certifications" aria-labelledby="certifications-title">
-      <div className="section-mark"><span>03</span><span className="rule"></span><span>TRACES OF THE LONG WAY</span></div>
+      <div className="section-mark"><span>02</span><span className="rule"></span><span>TRACES OF THE LONG WAY</span></div>
       <div className="archive-layout">
         <div className="archive-heading">
           <h2 id="certifications-title">Certifications<span className="gold-period">.</span></h2>
@@ -126,7 +103,7 @@ export default function TraceOfMe() {
 
 
       <section className="personal-archive disclosures" id="disclosures" aria-labelledby="disclosures-title">
-        <div className="section-mark"><span>04</span><span className="rule"></span><span>THINGS BROUGHT INTO THE LIGHT</span></div>
+        <div className="section-mark"><span>03</span><span className="rule"></span><span>THINGS BROUGHT INTO THE LIGHT</span></div>
         <div className="archive-layout">
           <div className="archive-heading"><h2 id="disclosures-title">Published<br /><em>disclosures.</em></h2><p>Six fractures I could give a name to.<br />For once, looking closer<br />left something I could point to.<br />March, 2026.</p></div>
           <ol className="disclosure-list">{advisories.map(item=><li key={item.id}><a href={item.url} target="_blank" rel="noopener noreferrer"><div className="disclosure-meta"><span>{item.project}</span><time>{item.week}</time></div><h3>{item.id}<span aria-hidden="true">↗</span></h3><p>{item.title}</p></a></li>)}</ol>
