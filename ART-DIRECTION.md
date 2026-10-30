@@ -137,3 +137,9 @@ Edit reference image into a FOUR-FRAME ANIMATION SPRITE SHEET, transparent RGBA 
 The Exo Mechs retain a common monitor style but no longer repeat one shared body tween. An Anime.js scheduler selects independent bounded tracking targets and variable pauses: Thanatos travels farther horizontally, Ares remains steady with small orientation changes, and Artemis/Apollo follow distinct offset paths. No adjacent target repeats. Scan direction, timing, reactor pulses and status cycles differ by mech. The scheduler is disposed on unmount or reduced-motion changes, including pending timers and stale completion callbacks.
 
 Draedon's chair hover is reduced from 22px to 3.5px vertical travel, with only 0.8px horizontal drift and 0.24 degrees total tilt over 5.2 seconds. The hand cels still operate the console. His dialogue is a readable dark speech bubble above-left of his face, with a short speaker pointer; desktop and mobile reserve space below the monitors to avoid overlap. No new raster artwork was needed.
+
+## Draedon hand performance — 2026-10-30
+
+The four existing hand cels now follow a gesture scheduler instead of a fixed 6.4-second CSS loop. Single taps, double taps and a thoughtful inspection alternate without adjacent repeated gestures. Wrist anticipation holds longer than contact; release settles into a 2.6–5.6 second thinking pause. Contact briefly brightens the independent hologram trace, leaving the body lighting untouched. The restrained chair hover and upper-left dialogue remain unchanged. Disposal cancels timers and resets both pose and console; reduced motion leaves the first cel still. No image warping, crossfades or new raster assets are involved.
+
+The journal now includes the user-requested original poetic example, “The things I could not automate”, clearly marked as a sample. It connects the rain, the ruined city and Draedon's laboratory, and uses the existing lab illustration within Markdown.

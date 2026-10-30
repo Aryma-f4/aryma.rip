@@ -1,6 +1,6 @@
 # Writing in the journal
 
-The journal is empty until you publish your own Markdown files. `_template.md` is a draft and is never a public article. There is no fabricated sample post.
+The journal includes the explicitly requested poetic example, `the-things-i-could-not-automate.md`, marked as a sample within the article. Edit or remove it whenever you want. `_template.md` remains a private draft and is never a public article.
 
 1. Copy `_template.md` to a lowercase dashed filename, such as `a-question-worth-keeping.md`.
 2. Fill in the YAML metadata and write below the closing `---`.

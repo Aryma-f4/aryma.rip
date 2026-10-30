@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { animate } from "animejs";
+import { startHandPerformance } from "../lib/draedon-hands.mjs";
 export default function DraedonHero() {
   const actor = useRef(null);
+  const handCels = useRef(null);
   const [celsReady, setCelsReady] = useState(false);
   useEffect(() => {
     const sprite = new Image();
@@ -12,6 +14,28 @@ export default function DraedonHero() {
       sprite.onload = null;
     };
   }, []);
+  useEffect(() => {
+    if (!celsReady) return;
+    const preference = matchMedia("(prefers-reduced-motion: reduce)");
+    const figure = actor.current;
+    let stop = () => {};
+    function setup() {
+      stop();
+      stop = preference.matches
+        ? () => {}
+        : startHandPerformance(handCels.current, {
+            onAction: (active) => {
+              figure.dataset.operating = active ? "true" : "false";
+            },
+          });
+    }
+    setup();
+    preference.addEventListener("change", setup);
+    return () => {
+      stop();
+      preference.removeEventListener("change", setup);
+    };
+  }, [celsReady]);
   const [quote, setQuote] = useState("magnificent");
   useEffect(() => {
     const motion = matchMedia("(prefers-reduced-motion: reduce)");
@@ -69,7 +93,11 @@ export default function DraedonHero() {
           fetchPriority="high"
         />
         {celsReady && (
-          <div className="draedon-working-cels" aria-hidden="true" />
+          <div
+            className="draedon-working-cels"
+            ref={handCels}
+            aria-hidden="true"
+          />
         )}
         <div className="draedon-hologram" aria-hidden="true">
           <span>OBSERVATION // 001</span>

@@ -2316,3 +2316,15 @@
     font-size: 11px;
   }
 }
+
+/* The hand sequence now waits, anticipates, taps and releases instead of looping a fixed cadence. */
+.draedon-working-cels {
+  animation: none;
+}
+.draedon-hero-actor[data-operating="true"] .draedon-hologram svg path {
+  stroke: #cef3e9;
+  animation-duration: 1.2s;
+}
+.draedon-hero-actor[data-operating="true"] .draedon-hologram {
+  border-color: #8acac15c;
+}
