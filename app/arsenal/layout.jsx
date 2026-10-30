@@ -3,7 +3,7 @@ import "./arsenal.css";
 export const metadata = {
   title: "The Arsenal — aryma.rip",
   description:
-    "Tools, field notes and unfinished ideas from Aryma’s workbench.",
+    "The third chapter: a signal beneath the ash, field notes, writing and unfinished ideas.",
 };
 export default function ArsenalLayout({ children }) {
   return (

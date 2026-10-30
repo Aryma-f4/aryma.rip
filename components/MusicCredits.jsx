@@ -26,5 +26,5 @@ export default function MusicCredits({ current }) {
 }
 
 export function SignalMusicCredit() {
-  return <div className="signal-credit"><span>MUSIC / THE ARSENAL</span><p>Signal Received — <strong>CDMusic</strong><br />Theme of Draedon (Pre-Fight) · Calamity Mod</p><a href="https://soundcloud.com/charliedebnammusic/signal-received" target="_blank" rel="noopener noreferrer">Original artist recording ↗</a><a href="https://cdmusic-uk.bandcamp.com/track/signal-received" target="_blank" rel="noopener noreferrer">Bandcamp ↗</a></div>;
+  return <div className="signal-credit"><span>MUSIC / THE ARSENAL</span><p>Signal Received — <strong>CDMusic</strong><br />Theme of Draedon (Pre-Fight) · Calamity Mod</p><a href="https://www.youtube.com/watch?v=Py9lmMSWhb0" target="_blank" rel="noopener noreferrer">YouTube source ↗</a><a href="https://soundcloud.com/charliedebnammusic/signal-received" target="_blank" rel="noopener noreferrer">Original artist recording ↗</a><a href="https://cdmusic-uk.bandcamp.com/track/signal-received" target="_blank" rel="noopener noreferrer">Bandcamp ↗</a></div>;
 }

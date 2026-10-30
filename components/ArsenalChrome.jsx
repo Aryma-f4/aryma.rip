@@ -12,7 +12,7 @@ export function ArsenalHeader({ detail = false }) {
         className="arsenal-back"
         href={detail ? "/arsenal/" : "/trace-of-me/"}
       >
-        {detail ? "← THE ARSENAL" : "A TRACE OF ME ↗"}
+        {detail ? "← THE ARSENAL" : "← A TRACE OF ME"}
       </Link>
     </header>
   );
@@ -23,7 +23,7 @@ export function ArsenalFooter() {
       <a href="/">aryma.rip</a>
       <p>BUILT IN THE HOURS THAT STILL BELONG TO ME.</p>
       <div>
-        <Link href="/arsenal/">The arsenal</Link>
+        <a href="/trace-of-me/">A trace of me</a>
         <Link href="/arsenal/blog/">The journal</Link>
         <a href="/">After the rain ↗</a>
       </div>

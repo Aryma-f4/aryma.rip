@@ -1,13 +1,8 @@
 import Link from "next/link";
 import DraedonLab from "../../components/DraedonLab";
 import DraedonHero from "../../components/DraedonHero";
-import {
-  ArsenalHeader,
-  ArsenalFooter,
-  ArsenalSigil,
-} from "../../components/ArsenalChrome";
+import { ArsenalHeader, ArsenalFooter } from "../../components/ArsenalChrome";
 import TextAtmosphere from "../../components/TextAtmosphere";
-import { tools } from "../../lib/arsenal.mjs";
 import { getJournalEntries } from "../../lib/journal.mjs";
 export default async function Arsenal() {
   const entries = await getJournalEntries();
@@ -30,18 +25,19 @@ export default async function Arsenal() {
               <em>I made instead.</em>
             </h1>
             <p className="arsenal-intro">
-              Tools, unfinished thoughts, and the stubborn need
-              <br className="desktop-break" /> to make something of my own.
+              I followed the signal beneath the ash.
+              <br className="desktop-break" /> Here, even silence was still
+              being built.
             </p>
             <a href="#creations" className="arsenal-explore">
               <span>EXPLORE THE ARSENAL</span>
               <span aria-hidden="true">↓</span>
             </a>
             <div className="arsenal-hero-note">
-              <span>01 / STILL BUILDING</span>
+              <span>FROM THE RAIN, THROUGH THE ASH</span>
               <p>
-                The world learned to make everything.
-                <br />I am still learning to make something matter.
+                The city had taught me what a machine could take.
+                <br />I came here to ask what was still mine to make.
               </p>
             </div>
           </div>
@@ -50,46 +46,34 @@ export default async function Arsenal() {
         </section>
         <section
           id="creations"
-          className="arsenal-section"
+          className="arsenal-section arsenal-arrival"
           aria-labelledby="creations-title"
         >
           <div className="arsenal-section-head">
             <div>
-              <p className="arsenal-kicker">01 / MACHINES WITH A PURPOSE</p>
+              <p className="arsenal-kicker">01 / WHERE THE SIGNAL LED</p>
               <h2 id="creations-title">
-                Things I have <em>set in motion.</em>
+                The machines remembered how.
+                <br />
+                <em>I was still looking for why.</em>
               </h2>
             </div>
-            <p>
-              A few instruments for looking closer.
-              <br />
-              The source is open. The questions remain.
-            </p>
-          </div>
-          <div className="arsenal-tools">
-            {tools.map((tool) => (
-              <Link
-                className="arsenal-tool"
-                href={`/arsenal/tools/${tool.slug}/`}
-                key={tool.slug}
-              >
-                <span className="arsenal-tool-number">/{tool.number}</span>
-                <ArsenalSigil type={tool.motif} />
-                <div className="arsenal-tool-copy">
-                  <span className="arsenal-tool-kind">{tool.kind}</span>
-                  <h3>{tool.name}</h3>
-                  <p>{tool.description}</p>
-                  <span className="arsenal-language">
-                    {tool.language}
-                    <i />
-                    SOURCE AVAILABLE
-                  </span>
-                </div>
-                <span className="arsenal-tool-arrow" aria-label="Open project">
-                  ↗
-                </span>
-              </Link>
-            ))}
+            <div className="arsenal-arrival-prose">
+              <p>
+                Draedon called it magnificent. Behind the glass, four perfect
+                answers waited for a question no one had asked.
+              </p>
+              <p>
+                I had come from a city that learned what an answer could cost.
+                The rain had given me somewhere to grieve. The ash had given me
+                a name to carry. Here, I wanted to learn what I could make
+                without losing the person making it.
+              </p>
+              <p>
+                This is where I keep the thoughts that survive the noise. Some
+                unfinished things are waiting to be understood.
+              </p>
+            </div>
           </div>
         </section>
         <section
@@ -102,14 +86,14 @@ export default async function Arsenal() {
           <div>
             <p className="arsenal-kicker">02 / THE WORDS BETWEEN THE WIRES</p>
             <h2 id="journal-title">
-              Not everything I make
+              What the machines
               <br />
-              <em>is a machine.</em>
+              <em>could not keep.</em>
             </h2>
             <p>
-              Field notes. Long nights. Things that needed
+              Words that took the long way here.
               <br />
-              to be written before they could be understood.
+              Field notes, fragments, and unfinished ideas.
             </p>
             <Link href="/arsenal/blog/" className="arsenal-text-link">
               Enter the journal <span>↗</span>
@@ -163,11 +147,11 @@ export default async function Arsenal() {
         <div className="arsenal-coda">
           <span>✧</span>
           <p>
-            Even in a world of perfect machines,
+            The signal led me here.
             <br />
-            <em>the unfinished things are mine.</em>
+            <em>The rain still knows my way home.</em>
           </p>
-          <a href="/">Back to the rain →</a>
+          <a href="/trace-of-me/">Return through the ash →</a>
         </div>
       </main>
       <ArsenalFooter />

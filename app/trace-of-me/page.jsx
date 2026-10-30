@@ -94,11 +94,11 @@ export default function TraceOfMe() {
           {/* Add real tools as <li className="tool-entry"><span>Tool name</span><span>What I use it for</span></li>. */}
           <ul className="tool-list" aria-label="Tools and technologies">
             <li className="tool-entry">
-              <span><a href="/arsenal/tools/gulpsuite/">Gulpsuite ↗</a></span>
+              <span><a href="https://github.com/Aryma-f4/gulpsuite" target="_blank" rel="noopener noreferrer">Gulpsuite ↗</a></span>
               <span>A free web security toolkit built in Rust, inspired by Burp Suite Pro.</span>
             </li>
             <li className="tool-entry">
-              <span><a href="/arsenal/tools/worldshellfinder/" aria-label="Read about WorldShellFinder">WorldShellFinder <span className="entry-arrow" aria-hidden="true">↗</span></a></span>
+              <span><a href="https://github.com/Aryma-f4/worldshellfinder" target="_blank" rel="noopener noreferrer" aria-label="WorldShellFinder on GitHub">WorldShellFinder <span className="entry-arrow" aria-hidden="true">↗</span></a></span>
               <span>A Go-based web shell detection tool using keywords, regex rules, and heuristic scoring.</span>
             </li>
           </ul>
@@ -132,7 +132,7 @@ export default function TraceOfMe() {
           <ol className="disclosure-list">{advisories.map(item=><li key={item.id}><a href={item.url} target="_blank" rel="noopener noreferrer"><div className="disclosure-meta"><span>{item.project}</span><time>{item.week}</time></div><h3>{item.id}<span aria-hidden="true">↗</span></h3><p>{item.title}</p></a></li>)}</ol>
         </div>
       </section>
-      <div className="trace-ending"><span>✧</span><p>The fire has gone quiet.<br /><em>I still hear what it took.</em></p><p className="trace-ending-note">Some things do not need to be repaired tonight.<br />Only remembered, without being asked<br />to become useful.</p><a href="/">Return to the quiet →</a></div>
+      <div className="trace-ending"><span>✧</span><p>The fire has gone quiet.<br /><em>A signal has not.</em></p><p className="trace-ending-note">Beneath the ruins, a laboratory is still awake.<br />The machines have kept their instructions.<br />I have kept one question: what is still worth making?</p><a href="/arsenal/">III / Enter the Arsenal →</a></div>
     </main>
     <footer><a className="footer-brand" href="/">aryma.rip</a><span>STILL HUMAN. STILL HERE.</span><a href="/">Back to the rain <span>↗</span></a><a href="/arsenal/">The arsenal <span>↗</span></a><MusicCredits current="interlude" /><small>A personal tribute to Terraria Calamity.</small></footer>
     <aside className="music-player trace-player" data-audio-control="true" aria-label="Interlude soundtrack controls">

@@ -56,7 +56,7 @@ After vocals, the character lowers her hands and quietly cries. This aftermath l
 
 ## Tools and certifications
 
-Edit the entries in `app/page.jsx`. Current tools are **Gulpsuite** and **WorldShellFinder**. Certifications are **CPENT (EC-Council)**, **CWSE (Hackviser)** and **CAPT (Hackviser)**. Personal names are omitted. Dates and credential links are omitted until supplied.
+Edit the entries in `app/trace-of-me/page.jsx`. Current tools are **Gulpsuite** and **WorldShellFinder**. Certifications are **CPENT (EC-Council)**, **CWSE (Hackviser)** and **CAPT (Hackviser)**. Personal names are omitted. Dates and credential links are omitted until supplied.
 
 Tools use `li.tool-entry` with a title and short description. Certifications use `li.credential-entry` with an `h3` title and issuer paragraph. Add an external credential link only when a real URL is available, using `target="_blank" rel="noopener noreferrer"`.
 
@@ -108,7 +108,7 @@ Pause, resume and seeks retain soundtrack synchronization. Reduced motion, hidde
 
 ## The Arsenal and Markdown journal
 
-`/arsenal/` collects Gulpsuite, WorldShellFinder, the journal entrance and published ideas. `/arsenal/tools/[slug]/` contains the two project detail pages; edit `lib/arsenal.mjs` for their descriptions and links. Quiet footer links connect the new route to home and Trace of Me.
+The reading path is `/` (rain) → `/trace-of-me/` (ash and personal archive) → `/arsenal/` (the signal, journal and ideas). Prominent story bridges lead forward; return links lead back. Gulpsuite and WorldShellFinder remain only in the Trace of Me archive, linking directly to GitHub; their Arsenal cards and detail routes were removed. The Arsenal music credit includes the supplied YouTube source alongside CDMusic’s artist links.
 
 Write articles as Markdown in `content/journal/`. Start from the ignored draft `_template.md`; see `content/journal/README.md` for frontmatter, images, supported code formatting, drafts and publishing. The blog starts empty. `react-markdown`, GFM and `rehype-highlight` render safe non-executable Markdown; Prettier formats supported embedded code before the article is statically built. Code blocks support copying. No CMS credentials or client-side content storage are needed.
 
